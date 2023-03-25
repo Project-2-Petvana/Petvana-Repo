@@ -8,17 +8,17 @@ module.exports = {
     // deletePet,
 };
 
-//This will retrieve user information and show a list of pets belonging to the user
+//This will retrieve user information and show a list of pets belonging to the user, rendering the userProfile.ejs
 // function index(req, res) {
 
 // }
 
-// This will redirect the user to the addPets.ejs view
+// This will render the addPets.ejs view
 // function newPet(req, res) {
 
 // };
 
-//This will submit the pet's information via a form on the addPets/ejs view
+//This will submit the pet's information via a form on the addPets/ejs view, redirecting to profile.ejs
 // async function createPet(req, res) {
 // try {
 
@@ -27,7 +27,7 @@ module.exports = {
 // }
 // };
 
-// This will delete the pet and all their data
+// This will delete the pet and all their health data from the database, redirecting to userProfile.ejs
 // async function deletePet(req, res) {
 //     try {
 

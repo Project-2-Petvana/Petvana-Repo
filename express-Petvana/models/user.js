@@ -9,14 +9,15 @@ const userSchema = new Schema ({
         required: true
     },
     email: String,
-    avatar: String
-}, {
-    timestamps: true
-},
+    avatar: String,
     pet: {
         type: Schema.Types.ObjectId,
         ref: 'Pet'
     }
+}, {
+    timestamps: true
+}
+
 );
 
 module.exports = mongoose.model('User', userSchema);

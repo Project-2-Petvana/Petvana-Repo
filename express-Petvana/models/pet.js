@@ -26,7 +26,7 @@ const petSchema = new Schema ({
     favoriteToy: {
         type: String,
         maxLength: 50
-    }
+    },
     birthday: {  
         type: Date,
     },
