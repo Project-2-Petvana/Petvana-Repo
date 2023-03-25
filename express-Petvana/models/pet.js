@@ -10,6 +10,7 @@ const petSchema = new Schema ({
     species: {
         type: String,
         required: true
+        enum: ['cat', 'dog', 'bird', 'bunny', 'fish']
     },
     age: {
         type: Number,
@@ -17,10 +18,20 @@ const petSchema = new Schema ({
         min: 0,
         max: 100
     },
-    sex: {},
+    sex: {
+        type: String,
+        required: true
+        enum: ['boy', 'girl']
+    },
     favoriteToy: {}
-    birthday: {},
-    healthTracker: {}
+    birthday: {  
+        type: String,
+        required: true
+    },
+    healthTracker: {  
+        type: String,
+        required: true
+    }
 
 
 });
