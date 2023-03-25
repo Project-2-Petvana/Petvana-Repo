@@ -23,7 +23,10 @@ const petSchema = new Schema ({
         required: true
         enum: ['boy', 'girl']
     },
-    favoriteToy: {}
+    favoriteToy: {
+        type: String,
+        maxLength: 50
+    }
     birthday: {  
         type: String,
         required: true

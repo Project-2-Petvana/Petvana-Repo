@@ -5,6 +5,6 @@ module.exports = {
     index,
 };
 
-function index(req, res) {
-    
-}
+// function index(req, res) {
+
+// }
