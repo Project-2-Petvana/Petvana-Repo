@@ -5,5 +5,8 @@ var router = express.Router();
 router.get('/', function(req, res, next) {
   res.render('homePage', { title: 'Petvana' });
 });
+// API 
+
+// 
 
 module.exports = router;
