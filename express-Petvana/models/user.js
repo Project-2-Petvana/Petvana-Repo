@@ -13,7 +13,10 @@ const userSchema = new Schema ({
 }, {
     timestamps: true
 },
-    pet: //schema.type ref pet object.id? 
+    pet: {
+        type: Schema.Types.ObjectId,
+        ref: 'Pet'
+    }
 );
 
 module.exports = mongoose.model('User', userSchema);

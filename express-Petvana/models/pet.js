@@ -28,15 +28,12 @@ const petSchema = new Schema ({
         maxLength: 50
     }
     birthday: {  
-        type: String,
-        required: true
+        type: Date,
     },
     healthTracker: {  
-        type: String,
-        required: true
+        type: Schema.Types.ObjectId,
+        ref: 'Health'
     }
-
-
 });
 
 module.exports = mongoose.model('Pet', petSchema);

@@ -2,23 +2,10 @@ const User = require('../models/user');
 const Pet = require('../models/pet');
 
 module.exports = {
-    // new: newPet,
-    // createPet,
     // show,
 };
 
-// function newPet(req, res) {
-
-// };
-
-// async function createPet(req, res) {
-// try {
-
-// } catch(err) {
-
-// }
-// };
-
+// This will show a detail page for the specific pet clicked on profile.ejs
 // function show(req, res) {
 
 // };
