@@ -2,9 +2,10 @@ const User = require('../models/user');
 const Pet = require('../models/pet');
 
 module.exports = {
-    index,
-    new: newPet, 
-    createPet,
+    // index,
+    // newPet, 
+    // createPet,
+    // deletePet,
 };
 
 //This will retrieve user information and show a list of pets belonging to the user
@@ -24,4 +25,13 @@ module.exports = {
 // } catch(err) {
 
 // }
+// };
+
+// This will delete the pet and all their data
+// async function deletePet(req, res) {
+//     try {
+
+//     } catch(err) {
+
+//     }
 // };

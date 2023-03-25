@@ -6,10 +6,13 @@ const usersCtrl = require('../controllers/users');
 /* GET users listing. */
 // router.get('/', usersCtrl.index);
 
-// // GET/ users/new-pet
-// router.get('/new-pet', usersCtrl.new);
+// // GET /users/new-pet
+// router.get('/new-pet', usersCtrl.newPet);
 
-// POST/ pets
-// router.post('/', usersCtrl.createPet)
+// POST /users
+// router.post('/', usersCtrl.createPet);
+
+// DELETE /users
+// router.delete('/', usersCtrl.deletePet);
 
 module.exports = router;

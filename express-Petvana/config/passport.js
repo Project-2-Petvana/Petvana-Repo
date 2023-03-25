@@ -1,9 +1,9 @@
 //passport.js   
 
-const passport = require('passport');
-const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
-// new code below
-const User = require('../models/user');
+// const passport = require('passport');
+// const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
+// // new code below
+// const User = require('../models/user');
 
 // passport.use(new GoogleStrategy(
 //     // Configuration object
