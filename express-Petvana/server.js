@@ -12,7 +12,7 @@ require('dotenv').config();
 require('./config/database');
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+var userRouter = require('./routes/user');
 var petsRouter = require('./routes/pets');
 
 var app = express();
@@ -30,7 +30,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // app.use(methodOverride('_method'));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/user', userRouter);
 app.use('/pets', petsRouter);
 
 

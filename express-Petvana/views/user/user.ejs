@@ -1,0 +1,28 @@
+<%- include('./partials/header') %>
+
+<h1>User Profile</h1>
+<!-- <h1><%= title %></h1> -->
+<table id="list">
+    <thead>
+      <tr>
+        <th>Avatar:</th>
+        <th>Name</th>
+        <th>Email:</th>
+        <th>Pet(s):</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% user.forEach(function(u) { %>
+        <tr>
+        <td><%= u.avatar %></td>
+          <td><%= u.name %></td>
+          <td><%= u.email %></td>
+          <td><%= u.pet %></td>
+          <td><a href="/<%= u.id %>">Pet Profile</a></td>
+        </tr>
+        <% }); %>
+      </tbody>
+    </table>
+
+<%- include('./partials/footer') %>

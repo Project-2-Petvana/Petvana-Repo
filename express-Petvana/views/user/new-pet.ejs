@@ -1,0 +1,36 @@
+<%- include('./partials/header') %>
+
+<!-- empty img src for pet logos...may not be needed -->
+<img src="">
+<img src="">
+
+<p>this is for the addPets page</p>
+
+<!-- can split into two divs for column alignment according to wireframe-->
+<!-- double check form action end point and method-->
+
+<form action="" method="POST">
+    <div>
+        <label>Name</label><input type ="text" name="name">
+        <label>Species</label>
+            <select name="species">
+                <option value="cat">Cat</option>
+                <option value="dog">Dog</option>
+                <option value="bird">Bird</option>
+            </select>
+        <label>Age</label><input type ="number" name="age">
+        <label>Sex</label>
+            <select name="sex">
+                <option value="boy">Boy</option>
+                <option value="girl">Girl</option>
+            </select>
+        <label>Favorite Toy</label><input type ="text" name="favoriteToy">
+        <label>Birthday</label><input type ="date" name="birthday">
+
+    </div>
+    
+    <label>New Pet</label>
+    <input type="submit" value="Add Pet">
+</form>
+
+<%- include('./partials/footer') %>
