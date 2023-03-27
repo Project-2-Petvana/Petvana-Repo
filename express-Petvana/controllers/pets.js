@@ -22,17 +22,24 @@ async function show(req, res) {
 // This will take the user to the editProfile.ejs view
 async function editInfo(req, res) {
     try {
-        
+        const user = await User.findById(req.params.id);
+        const pet = await Pet.find({user: pet._id});
+        res.render(`/${pet._id}/edit`, {title: 'Edit Pet Profile', user, pet});
     } catch(err) {
-        
+        console.log(err);
+        res.sendStatus(500);
     }
 };
 
 // This will update the static information on the profile.ejs view
 async function updateInfo(req,res) {
     try {
-
+        const user = await User.findById(req.params.id);
+        const pet = await Pet.find({user: pet._id});
+        Pet.update(req.params.id, req.body);
+        res.redirect(`/${pet._id}`, {title: 'Pet Profile', user, pet})
     } catch(err) {
-
+        console.log(err);
+        res.sendStatus(500);
     }
 }
