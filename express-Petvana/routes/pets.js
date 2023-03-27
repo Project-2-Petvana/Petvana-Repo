@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-const 
+// const 
 const petsCtrl = require('../controllers/pets');
 
 // // GET/ pets/:id 
