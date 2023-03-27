@@ -6,7 +6,7 @@ module.exports = {
     index,
     newPet, 
     createPet,
-    // deletePet,
+    deletePet,
 };
 
 // This will retrieve user information and show a list of pets belonging to the user, rendering the userProfile.ejs
@@ -41,7 +41,7 @@ try {
 async function deletePet(req, res) {
     try {
         Pet.findOne({'pet._id': req.params.id}).then (function(pet) {
-            user.pet.remove({pet._id});
+            user.pet.remove(req.params.id);
             user.save().then(function(){
                 console.log('data deleted');
                 res.redirect('/users');
