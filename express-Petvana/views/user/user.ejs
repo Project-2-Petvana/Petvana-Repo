@@ -13,15 +13,14 @@
       </tr>
     </thead>
     <tbody>
-      <% user.forEach(function(u) { %>
         <tr>
-        <td><%= u.avatar %></td>
-          <td><%= u.name %></td>
-          <td><%= u.email %></td>
-          <td><%= u.pet %></td>
+        <td><%= user.avatar %></td>
+          <td><%= user.name %></td>
+          <td><%= user.email %></td>
+          <td><%= user.pet %></td>
           <td><a href="/<%= u.id %>">Pet Profile</a></td>
         </tr>
-        <% }); %>
+
       </tbody>
     </table>
 
