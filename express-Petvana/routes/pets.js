@@ -11,3 +11,5 @@ router.get('/:id/edit', petsCtrl.editInfo)
 
 // PUT pets/:id
 router.put('/:id', petsCtrl.updateInfo)
+
+module.exports = router;
