@@ -21,7 +21,8 @@ const healthSchema = new Schema ({
     },
     eating: {
         type: Boolean,
-        required: true
+        required: true,
+        enum: ['yes', 'no']
     },
     mood: {
         type: String,

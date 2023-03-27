@@ -9,7 +9,13 @@
 </head>
 <body>
   <nav>
-    <a href="/new-pet">Add a Pet</a> ||
+<% if (user) { %>
+
+    <a href="user/new-pet">Add a Pet</a> ||
     <a href="/user">User Profile</a> ||
-    <a href="/auth/google">LogIn/LogOut</a>
+    <a href="/logout">LogOut</a>
+    <% } else { %>
+    <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
+    <% } %>
+
   </nav>
