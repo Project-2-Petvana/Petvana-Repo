@@ -2,17 +2,18 @@ var express = require('express');
 var router = express.Router();
 
 const userCtrl = require('../controllers/user');
+const ensureLoggedIn = require('../config/ensureLoggedIn');
 
 /* GET user listing. */
-router.get('/', userCtrl.index);
+router.get('/', ensureLoggedIn, userCtrl.index);
 
 // // GET /user/new-pet
-router.get('/new-pet', userCtrl.newPet);
+router.get('/new-pet', ensureLoggedIn, userCtrl.newPet);
 
 // POST /user
-router.post('/', userCtrl.createPet);
+router.post('/', ensureLoggedIn, userCtrl.createPet);
 
 // DELETE /user
-router.delete('/', userCtrl.deletePet);
+router.delete('/', ensureLoggedIn, userCtrl.deletePet);
 
 module.exports = router;
