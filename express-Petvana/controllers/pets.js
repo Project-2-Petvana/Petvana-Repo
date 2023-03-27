@@ -2,26 +2,37 @@ const User = require('../models/user');
 const Pet = require('../models/pet');
 
 module.exports = {
-    // show,
-    // editInfo,
-    // updateInfo
+    show,
+    editInfo,
+    updateInfo
 };
 
 // This will show a detail page for the specific pet clicked on profile.ejs
-// function show(req, res) {
-
-// };
+async function show(req, res) {
+    try {
+        const user = await User.findById(req.params.id);
+        const pet = await Pet.find({user: pet._id});
+        res.render(`/${pet._id}`, {title: 'Pet Profile', user, pet});
+    } catch(err) {
+        console.log(err);
+        res.sendStatus(500);
+    }
+};
 
 // This will take the user to the editProfile.ejs view
-// function editInfo(req, res) {
-
-// };
+async function editInfo(req, res) {
+    try {
+        
+    } catch(err) {
+        
+    }
+};
 
 // This will update the static information on the profile.ejs view
-// async function updateInfo(req,res) {
-//     try {
+async function updateInfo(req,res) {
+    try {
 
-//     } catch(err) {
+    } catch(err) {
 
-//     }
-// }
+    }
+}
