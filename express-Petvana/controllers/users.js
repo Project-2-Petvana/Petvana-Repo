@@ -1,6 +1,6 @@
 const User = require('../models/user');
 const Pet = require('../models/pet');
-const user = require('../models/user');
+
 
 module.exports = {
     index,
@@ -40,7 +40,7 @@ try {
 // This will delete the pet and all their health data from the database, redirecting to userProfile.ejs
 async function deletePet(req, res) {
     try {
-        Pet.findOne({'pet._id': req.params.id}).then (function(pet) {
+        Pet.findOne({'pet._id': req.params.id}).then (function(user) {
             user.pet.remove(req.params.id);
             user.save().then(function(){
                 console.log('data deleted');
