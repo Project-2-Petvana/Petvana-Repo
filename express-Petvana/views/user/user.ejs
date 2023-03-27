@@ -1,7 +1,6 @@
 <%- include('../partials/header') %>
 
-<h1>User Profile</h1>
-<!-- <h1><%= title %></h1> -->
+<h1><%= title %></h1>
 <table id="list">
     <thead>
       <tr>
@@ -18,7 +17,7 @@
           <td><%= user.name %></td>
           <td><%= user.email %></td>
           <td><%= user.pet %></td>
-          <td><a href="/<%= u.id %>">Pet Profile</a></td>
+          <td><a href="/<%= user.id %>">Pet Profile</a></td>
         </tr>
 
       </tbody>
