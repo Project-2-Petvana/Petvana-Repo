@@ -30,10 +30,10 @@ const petSchema = new Schema ({
     birthday: {  
         type: Date,
     },
-    healthTracker: {  
+    healthTracker: [{  
         type: Schema.Types.ObjectId,
         ref: 'Health'
-    }
+    }]
 });
 
 module.exports = mongoose.model('Pet', petSchema);

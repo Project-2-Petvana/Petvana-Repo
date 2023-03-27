@@ -10,10 +10,10 @@ const userSchema = new Schema ({
     },
     email: String,
     avatar: String,
-    pet: {
+    pet: [{
         type: Schema.Types.ObjectId,
         ref: 'Pet'
-    }
+    }]
 }, {
     timestamps: true
 }
