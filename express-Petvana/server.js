@@ -13,7 +13,7 @@ require('./config/database');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-// var petsRouter = require('./routes/pets');
+var petsRouter = require('./routes/pets');
 
 var app = express();
 
