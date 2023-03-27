@@ -13,7 +13,7 @@ module.exports = {
 async function index(req, res) {
 try {
 const user = await User.find({});
-    res.render('/user', {title: 'User Profile', user});
+    res.render('user/user', {title: 'User Profile', user});
 } catch(err) {
     console.log(err);
     res.sendStatus(500);
@@ -22,7 +22,7 @@ const user = await User.find({});
 
 // This will render the new-pet.ejs view
 function newPet(req, res) {
-    res.render('/pets/new-pet', {title: 'Add a Pet', errorMsg: ''});
+    res.render('user/new-pet', {title: 'Add a Pet', errorMsg: ''});
 };
 
 //This will submit the pet's information via a form on the addPets/ejs view, redirecting to profile.ejs
