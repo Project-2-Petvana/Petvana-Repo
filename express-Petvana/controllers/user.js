@@ -64,20 +64,6 @@ async function createPet(req, res) {
     }
 }
 // This will delete the pet and all their health data from the database, redirecting to user.ejs
-// async function deletePet(req, res) {
-//     try {
-//         const user = await User.findById(req.user.id);
-//         Pet.findOne({'pet._id': req.params.id}).then (function(user) {
-//             user.pet.deleteOne(req.params.id);
-//             user.save().then(function(){
-//                 console.log('data deleted');
-//                 res.redirect('/user/user');
-//             })
-//         })
-//     } catch(err) {
-//         return next(err);
-//     }
-// }
 
 async function deletePet(req, res, next) {
     try {
@@ -92,4 +78,4 @@ async function deletePet(req, res, next) {
     } catch (err) {
         return next(err);
     }
-}
+};
