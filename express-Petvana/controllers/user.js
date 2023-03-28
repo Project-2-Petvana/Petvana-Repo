@@ -14,7 +14,7 @@ module.exports = {
 // This will retrieve user information and show a list of pets belonging to the user, rendering the user.ejs
 async function index(req, res) {
 try {
-const user = await User.findById(req.params.id).populate('pet');
+const user = await User.findById(req.user.id).populate('pet');
 // const pet = await Pet.find({user: pet._id});
     res.render('user/user', {title: 'User Profile', user});
 } catch(err) {
