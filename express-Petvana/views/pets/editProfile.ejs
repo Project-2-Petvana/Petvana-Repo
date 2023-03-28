@@ -3,15 +3,15 @@
 <h1><%= pet.name %></h1>
 <br>
 <div>
-    <form action="/pets" method="PUT">
+    <form action="/pets/<%= pet.id %>?_method=PUT" method="POST">
         <label>
             Birthday:
-            <input type="date" name="birthday">
+            <input type="date" name="birthday" value ="<%= pet.birthday%>">
         </label>
         <br>
         <label>
             Species:
-            <select name="species">
+            <select name="species" value = "<%= pet.species %>">
                 <option value="cat">Cat</option>
                 <option value="dog">Dog</option>
                 <option value="bird">Bird</option>
@@ -22,12 +22,12 @@
         <br>
         <label>
             Age:
-            <input type="number" name="age">
+            <input type="number" name="age" value = "<%= pet.age %>">
         </label>
         <br>
         <label>
             Sex:
-            <select name="sex">
+            <select name="sex" value ="<%= pet.sex %>">
                 <option value="boy">Boy</option>
                 <option value="girl">Girl</option>
             </select>
@@ -35,7 +35,7 @@
         <br>
         <label>
             Favorite Toy(s):
-            <input type="string" name="favoriteToy">
+            <input type="string" name="favoriteToy" value="<%= pet.favoriteToy %>">
         </label> 
         <button type="submit">Save Changes</button>
     </form>

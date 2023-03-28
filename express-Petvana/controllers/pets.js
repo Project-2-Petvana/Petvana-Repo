@@ -39,12 +39,16 @@ async function editInfo(req, res) {
 async function updateInfo(req,res) {
     try {
         const user = await User.findById(req.user.id);
+        console.log(user, 'user for pet edit');
         const petId= req.params.id;
         const pet = await Pet.findById(petId);
-        Pet.update(req.params.id, req.body);
-        res.redirect(`/${pet._id}`, {title: 'Pet Profile', user, pet})
+        console.log(pet, 'pet edit page');
+        await Pet.updateOne({_id: petId}, req.body);
+        console.log('EDITTTTTTTTT', req.body);
+        res.redirect(`/pets/${pet._id}`, {title: 'Pet Profile', user, pet})
     } catch(err) {
         console.log(err);
         res.sendStatus(500);
     }
 }
+// req.params.id, req.body
