@@ -32,13 +32,10 @@ async function newPet(req, res) {
 async function createPet(req, res) {
 try {
     const user = await User.findById(req.params.id);
-    console.log('user:', user);
-    console.log('req.params.id:', req.params.id);
-    // req.body.user = user._id;
-    console.log('user:', user);
-    // await Pet.create(req.body);
-    user.pet.push(req.body);
-    await user.save();
+    req.body.user = user._id;
+    // req.body.userName = req.user.name;
+    // req.body.userAvatar = req.user.avatar;
+    await Pet.create(req.body);
     res.redirect('/user');
 } catch(err) {
     res.sendStatus(500)
