@@ -45,10 +45,11 @@ async function updateInfo(req,res) {
         console.log(pet, 'pet edit page');
         await Pet.updateOne({_id: petId}, req.body);
         console.log('EDITTTTTTTTT', req.body);
-        res.redirect(`/pets/${pet._id}`, {title: 'Pet Profile', user, pet})
+        res.redirect(`/pets/${pet._id}`)
     } catch(err) {
         console.log(err);
         res.sendStatus(500);
     }
 }
 // req.params.id, req.body
+// {title: 'Pet Profile', user, pet}
