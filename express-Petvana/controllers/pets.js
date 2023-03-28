@@ -12,7 +12,7 @@ async function show(req, res) {
     try {
         const user = await User.findById(req.params.id);
         const pet = await Pet.find({user: pet._id});
-        res.render(`/${pet._id}`, {title: 'Pet Profile', user, pet});
+        res.render(`user/user`, {title: 'Pet Profile', user, pet});
     } catch(err) {
         console.log(err);
         res.sendStatus(500);
@@ -24,7 +24,7 @@ async function editInfo(req, res) {
     try {
         const user = await User.findById(req.params.id);
         const pet = await Pet.find({user: pet._id});
-        res.render(`/${pet._id}/edit`, {title: 'Edit Pet Profile', user, pet});
+        res.render(`pets/editProfile`, {title: 'Edit Pet Profile', user, pet});
     } catch(err) {
         console.log(err);
         res.sendStatus(500);

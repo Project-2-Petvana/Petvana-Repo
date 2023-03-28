@@ -2,30 +2,26 @@
 
 <h1><%= title %></h1>
 <table id="list">
-    <thead>
-      <tr>
-        <th>Avatar:</th>
-        <th>Name</th>
-        <th>Email:</th>
-        <th>Pet(s):</th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-        <td><%= user.avatar %></td>
-        <br>
-          <td><%= user.name %></td>
-          <br>
-          <td><%= user.email %></td>
-          <br>
-          <td><%= user.pet %></td>
-          <br>
+  <table>
+    <tr>
+      <th>Avatar:</th>
+      <td><%= user.avatar %></td>
+    </tr>
+    <tr>
+      <th>Name</th>
+      <td><%= user.name %></td>
+    </tr>
+    <tr>
+      <th>Email:</th>
+      <td><%= user.email %></td>
+    </tr>
+    <tr>
+      <th>Pet(s):</th>
+      <td><%= user.pet %></td>
+      <td> pet name </td>
+      <td><a href=""> pet profile </a></td>
+    </tr>
+  </table>
 
-          <td><a href="/<%= pet.id %>">Pet Profile</a></td>
-        </tr>
-
-      </tbody>
-    </table>
 
 <%- include('../partials/footer') %>
