@@ -8,7 +8,7 @@ const ensureLoggedIn = require('../config/ensureLoggedIn');
 router.get('/new-pet', ensureLoggedIn, userCtrl.newPet);
 
 /* GET user listing. */
-router.get('/:id', ensureLoggedIn, userCtrl.index);
+router.get('/', ensureLoggedIn, userCtrl.index);
 
 // POST /user
 router.post('/', ensureLoggedIn, userCtrl.createPet);
