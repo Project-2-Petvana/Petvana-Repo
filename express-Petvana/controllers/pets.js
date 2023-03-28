@@ -11,9 +11,11 @@ module.exports = {
 async function show(req, res) {
     try {
         const user = await User.findById(req.user.id);
+        console.log(user, 'user')
         const petId= req.params.id;
         const pet = await Pet.findById(petId);
-        res.render('/pets/profile', {title: 'Pet Profile', user, pet});
+        console.log(pet, 'pet')
+        res.render('pets/profile', {title: 'Pet Profile', user, pet});
     } catch(err) {
         console.log(err);
         res.sendStatus(500);
