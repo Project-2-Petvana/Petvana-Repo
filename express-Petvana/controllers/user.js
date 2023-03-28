@@ -84,12 +84,9 @@ async function deletePet(req, res, next) {
         const user = await User.findById(req.user.id);
         console.log(user, 'user');
         const petId = req.params.id;
-        // console.log(req.body);
         const pet = await Pet.findById(petId);
         console.log(pet, 'pet');
-        // user.pet.pull(petId);
         await Pet.deleteOne(pet);
-        await user.save();
         console.log('data deleted');
         res.redirect('/user');
     } catch (err) {
