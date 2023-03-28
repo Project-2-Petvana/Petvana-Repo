@@ -33,7 +33,9 @@ const healthSchema = new Schema ({
         required: false,
         maxLength: 160
     },
-    })
+    }, {
+        timestamps: true
+    });
 
 
 module.exports = mongoose.model('Health', healthSchema);

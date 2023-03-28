@@ -15,9 +15,13 @@ async function show(req, res) {
         console.log(user, 'user')
         const petId= req.params.id;
         const pet = await Pet.findById(petId);
-        const health = await Health.findById(req.health.id);
-        console.log(pet, 'pet')
-        res.render('pets/profile', {title: 'Pet Profile', user, pet, health});
+        if (Health) { 
+            const health = await Health.findById(req.params.id);
+            console.log(pet, 'pet')
+            res.render('pets/profile', {title: 'Pet Profile', user, pet, health});
+        } else {
+            res.render('pets/profile', {title: 'Pet Profile', user, pet});
+        }
     } catch(err) {
         console.log(err);
         res.sendStatus(500);

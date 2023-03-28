@@ -38,6 +38,8 @@ const petSchema = new Schema ({
         type: Schema.Types.ObjectId,
         ref: 'Health'
     }]
+}, {
+    timestamps: true
 });
 
 module.exports = mongoose.model('Pet', petSchema);

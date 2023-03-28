@@ -3,21 +3,20 @@ const Pet = require('../models/pet');
 const Health = require('../models/health')
 
 module.exports = {
-    create
+    createHealth
 };
 
-async function create (req, res) {
+async function createHealth (req, res) {
     try {
 
         //grabbing all models
         const user = await User.findById(req.user.id);
         const petId= req.params.id;
         const pet = await Pet.findById(petId);
-        
+
+        //setting what properties will be in req.body
         const { sleep, exercise, poo, eating, mood } = req.body
-        if (!user) {
-            return res.status(404).json({ error: 'User not found' });
-          }
+
         const health = new Health({
             sleep,
             exercise,
