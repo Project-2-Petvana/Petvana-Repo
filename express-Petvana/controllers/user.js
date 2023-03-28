@@ -33,23 +33,15 @@ async function newPet(req, res) {
 //This will submit the pet's information via a form on the addPets/ejs view, redirecting to profile.ejs
 async function createPet(req, res) {
 try {
-    const user = await User.findById(req.params.id);
-    // console.log(req.params.id, "id")
-    // console.log(req.body.user, "user")
-    // console.log(req.body)
-    // console.log(user)
-    // req.body.user = user._id;
-    // console.log(req.body.user, "user test")
-    // req.body.name = req.user.name;
-    // console.log(req.body.name, "userName")
-    // req.body.avatar = req.user.avatar;
-    // console.log(req.body.avatar, "avatar")
-    // console.log(req.body)
+    // const user = await User.findById(req.params.id);
+//    await Pet.create(req.body)
+   console.log(req.body, "req.body")
+    console.log(Pet, "Pet object");
 
-    user.pet.push(req.body);
-    console.log(user.pet, "pet")
-    console.log(req.body, "body")
-    await user.save();
+    Pet.push(req.body);
+    console.log(Pet, "Pet");
+    console.log(req.body, "body");
+    await Pet.save();
     // await Pet.create(req.body);
     res.redirect('/user');
 } catch(err) {
