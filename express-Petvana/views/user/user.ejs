@@ -5,7 +5,7 @@
   <table>
     <tr>
       <th>Avatar:</th>
-      <td><%= user.avatar %></td>
+      <td><img src="<%= user.avatar %>" alt="Avatar"></td>
     </tr>
     <tr>
       <th>Name</th>
@@ -17,9 +17,21 @@
     </tr>
     <tr>
       <th>Pet(s):</th>
-      <td><%= user.pet %></td>
-      <td> pet name </td>
-      <td><a href=""> pet profile </a></td>
+      <% if (user.pet && user.pet.length > 0) { %>
+        <% user.pet.forEach(function(pet) { %>
+          <tr>
+            <td><%= pet.name %></td>
+            <td>Species: <%= pet.species %></td>
+            <td>Age: <%= pet.age %></td>
+            <td>Sex: <%= pet.sex %></td>
+            <td><a href="">Pet profile</a></td>
+          </tr>
+        <% }); %>
+      <% } else { %>
+        <tr>
+          <td colspan="5">No pets found.</td>
+        </tr>
+      <% } %>
     </tr>
   </table>
 
