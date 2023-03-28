@@ -1,12 +1,12 @@
 <%- include('../partials/header') %>
 
-<h1>Pet's Name</h1>
+<h1><%= pet.name %></h1>
 <br>
 <div>
     <form action="/pets" method="PUT">
         <label>
             Birthday:
-            <input type="datetime-local" name="birthday">
+            <input type="date" name="birthday">
         </label>
         <br>
         <label>
@@ -17,6 +17,7 @@
                 <option value="bird">Bird</option>
                 <option value="bunny">Bunny</option>
                 <option value="fish">Fish</option>
+            </select>
         </label>
         <br>
         <label>

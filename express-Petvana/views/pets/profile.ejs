@@ -3,6 +3,9 @@
 <h1><%= title %><h1>
 <img href="">
 <div>
+    <h5>Name: </h5>
+    <p><%= pet.name %></p>
+    <br>
     <h5>Birthday: </h5>
     <p><%= pet.birthday %></p>
     <br>
@@ -16,7 +19,11 @@
     <p><%= pet.sex %></p>
     <br>
     <h5>Favorite Toy(s):</h5>
-    <p><%= pet.favoriteToy %></p>  
+    <p><%= pet.favoriteToy %></p>
+        <!-- '/:id/edit'-->
+    <a href="/pets/<%= pet.id %>/editProfile">Edit Information</a>
+    <h5><a href="">Health Tracker(icebox)</a></h5>
+
 </div>
 
 <%- include('../partials/footer') %>

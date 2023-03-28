@@ -9,7 +9,7 @@ const ensureLoggedIn = require('../config/ensureLoggedIn');
 router.get('/:id', ensureLoggedIn, petsCtrl.show)
 
 // GET pets/:id/edit
-router.get('/:id/edit', ensureLoggedIn, petsCtrl.editInfo)
+router.get('/:id/editProfile', ensureLoggedIn, petsCtrl.editInfo)
 
 // PUT pets/:id
 router.put('/:id', ensureLoggedIn, petsCtrl.updateInfo)

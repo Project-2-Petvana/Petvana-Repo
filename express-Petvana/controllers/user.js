@@ -38,8 +38,8 @@ async function createPet(req, res) {
         return res.status(404).json({ error: 'User not found' });
       }
 
-      const { name, species, age, sex } = req.body;
-      if (!name || !species || !age || !sex) {
+      const { name, species, age, sex, birthday } = req.body;
+      if (!name || !species || !age || !sex || !birthday) {
         return res.status(400).json({ error: 'Missing required fields' });
       }
 
@@ -48,7 +48,8 @@ async function createPet(req, res) {
         species,
         age,
         sex,
-        user: user._id
+        user: user._id,
+        birthday
       });
 
       await pet.save();
