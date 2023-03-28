@@ -37,12 +37,12 @@ async function createPet(req, res) {
       if (!user) {
         return res.status(404).json({ error: 'User not found' });
       }
-  
+
       const { name, species, age, sex } = req.body;
       if (!name || !species || !age || !sex) {
         return res.status(400).json({ error: 'Missing required fields' });
       }
-  
+
       const pet = new Pet({
         name,
         species,
@@ -50,31 +50,49 @@ async function createPet(req, res) {
         sex,
         user: user._id
       });
-  
+
       await pet.save();
       user.pet.push(pet._id);
       await user.save();
       console.log(pet)
       console.log(user)
-  
+
       res.redirect('/user');
     } catch (err) {
       console.error(err);
       res.sendStatus(500);
     }
 }
-
 // This will delete the pet and all their health data from the database, redirecting to user.ejs
-async function deletePet(req, res) {
+// async function deletePet(req, res) {
+//     try {
+//         const user = await User.findById(req.user.id);
+//         Pet.findOne({'pet._id': req.params.id}).then (function(user) {
+//             user.pet.deleteOne(req.params.id);
+//             user.save().then(function(){
+//                 console.log('data deleted');
+//                 res.redirect('/user/user');
+//             })
+//         })
+//     } catch(err) {
+//         return next(err);
+//     }
+// }
+
+async function deletePet(req, res, next) {
     try {
-        Pet.findOne({'pet._id': req.params.id}).then (function(user) {
-            user.pet.remove(req.params.id);
-            user.save().then(function(){
-                console.log('data deleted');
-                res.redirect('/user');
-            })
-        })
-    } catch(err) {
+        const user = await User.findById(req.user.id);
+        console.log(user, 'user');
+        const petId = req.params.id;
+        // console.log(req.body);
+        const pet = await Pet.findById(petId);
+        console.log(pet, 'pet');
+        // user.pet.pull(petId);
+        await Pet.deleteOne(pet);
+        await user.save();
+        console.log('data deleted');
+        res.redirect('/user');
+    } catch (err) {
         return next(err);
     }
 }

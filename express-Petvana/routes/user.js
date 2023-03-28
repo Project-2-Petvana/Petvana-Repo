@@ -14,6 +14,6 @@ router.get('/', ensureLoggedIn, userCtrl.index);
 router.post('/', ensureLoggedIn, userCtrl.createPet);
 
 // DELETE /user
-router.delete('/', ensureLoggedIn, userCtrl.deletePet);
+router.delete('/:id', ensureLoggedIn, userCtrl.deletePet);
 
 module.exports = router;

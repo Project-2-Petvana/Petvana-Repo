@@ -25,6 +25,9 @@
             <td>Age: <%= pet.age %></td>
             <td>Sex: <%= pet.sex %></td>
             <td><a href="">Pet profile</a></td>
+            <form action="/user/<%= pet.id %>?_method=DELETE" method="POST">
+              <td><button type="submit">X</button></td>
+            </form>
           </tr>
         <% }); %>
       <% } else { %>
