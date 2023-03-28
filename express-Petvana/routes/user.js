@@ -4,11 +4,11 @@ var router = express.Router();
 const userCtrl = require('../controllers/user');
 const ensureLoggedIn = require('../config/ensureLoggedIn');
 
-/* GET user listing. */
-router.get('/', ensureLoggedIn, userCtrl.index);
-
 // // GET /user/new-pet
 router.get('/new-pet', ensureLoggedIn, userCtrl.newPet);
+
+/* GET user listing. */
+router.get('/:id', ensureLoggedIn, userCtrl.index);
 
 // POST /user
 router.post('/', ensureLoggedIn, userCtrl.createPet);

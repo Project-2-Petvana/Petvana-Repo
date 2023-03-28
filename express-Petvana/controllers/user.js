@@ -14,7 +14,7 @@ module.exports = {
 // This will retrieve user information and show a list of pets belonging to the user, rendering the user.ejs
 async function index(req, res) {
 try {
-const user = await User.findById(req.params.id).populate('pet(s)');
+const user = await User.findById(req.params._id).populate('pet');
 // const pet = await Pet.find({user: pet._id});
     res.render('user/user', {title: 'User Profile', user});
 } catch(err) {
@@ -27,12 +27,16 @@ const user = await User.findById(req.params.id).populate('pet(s)');
 async function newPet(req, res) {
     const user = await User.find({});
     // const pet = await Pet.find({});
-    res.render('user/new-pet', {title: 'Add a Pet', errorMsg: ''});
+    res.render('user/new-pet', {title: 'Add a Pet', errorMsg: '', user});
 };
 
 //This will submit the pet's information via a form on the addPets/ejs view, redirecting to profile.ejs
 async function createPet(req, res) {
 try {
+    //two ways of going about this - creating a pet model directly or grabbing a user ID and then pushing and saving the pet to user.pet 
+
+    //first wa
+
     // const user = await User.findById(req.params.id);
 //    await Pet.create(req.body)
    console.log(req.body, "req.body")
