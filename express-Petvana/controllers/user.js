@@ -1,5 +1,6 @@
 const User = require('../models/user');
 const Pet = require('../models/pet');
+const pet = require('../models/pet');
 
 
 module.exports = {
@@ -21,8 +22,10 @@ const user = await User.find({});
 }
 
 // This will render the new-pet.ejs view
-function newPet(req, res) {
-    res.render('user/new-pet', {title: 'Add a Pet', errorMsg: ''});
+async function newPet(req, res) {
+    const user = await User.find({});
+    // const pet = await Pet.find({user: pet});
+    res.render('user/new-pet', {title: 'Add a Pet', errorMsg: '', user});
 };
 
 //This will submit the pet's information via a form on the addPets/ejs view, redirecting to profile.ejs
@@ -30,7 +33,9 @@ async function createPet(req, res) {
 try {
     const user = await User.findById(req.params.id);
     req.body.user = user._id;
-    await Pet.create(req.body);
+    // await Pet.create(req.body);
+    user.pet.push(req.body);
+    await user.pet.save();
     res.redirect('/user');
 } catch(err) {
     res.sendStatus(500)
