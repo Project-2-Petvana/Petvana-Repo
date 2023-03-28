@@ -1,6 +1,7 @@
 const User = require('../models/user');
 const Pet = require('../models/pet');
 // const pet = require('../models/pet');
+const pet = require('../models/pet');
 
 
 module.exports = {
@@ -14,6 +15,7 @@ module.exports = {
 async function index(req, res) {
 try {
 const user = await User.find({});
+// const pet = await Pet.find({user: pet._id});
     res.render('user/user', {title: 'User Profile', user});
 } catch(err) {
     console.log(err);
