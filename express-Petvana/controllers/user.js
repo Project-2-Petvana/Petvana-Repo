@@ -54,7 +54,7 @@ try {
     res.redirect('/user');
 } catch(err) {
     res.sendStatus(500)
-}
+}}
 
 // This will delete the pet and all their health data from the database, redirecting to user.ejs
 async function deletePet(req, res) {
