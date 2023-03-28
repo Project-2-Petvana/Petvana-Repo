@@ -1,5 +1,6 @@
 const User = require('../models/user');
 const Pet = require('../models/pet');
+const Health = require('../models/health')
 
 module.exports = {
     show,
@@ -14,8 +15,9 @@ async function show(req, res) {
         console.log(user, 'user')
         const petId= req.params.id;
         const pet = await Pet.findById(petId);
+        const health = await Health.findById(req.health.id);
         console.log(pet, 'pet')
-        res.render('pets/profile', {title: 'Pet Profile', user, pet});
+        res.render('pets/profile', {title: 'Pet Profile', user, pet, health});
     } catch(err) {
         console.log(err);
         res.sendStatus(500);

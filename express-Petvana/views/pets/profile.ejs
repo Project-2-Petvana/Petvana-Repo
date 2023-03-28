@@ -3,27 +3,90 @@
 <h1><%= title %><h1>
 <img href="">
 <div>
-    <h5>Name: </h5>
-    <p><%= pet.name %></p>
-    <br>
-    <h5>Birthday: </h5>
-    <p><%= pet.birthday %></p>
-    <br>
-    <h5>Age:</h5>
-    <p><%= pet.age %></p>
-    <br>
-    <h5>Species:</h5>
-    <p><%= pet.species %></p>
-    <br>
-    <h5>Sex:</h5>
-    <p><%= pet.sex %></p>
-    <br>
-    <h5>Favorite Toy(s):</h5>
-    <p><%= pet.favoriteToy %></p>
-        <!-- '/:id/edit'-->
-    <a href="/pets/<%= pet.id %>/editProfile">Edit Information</a>
-    <h5><a href="">Health Tracker(icebox)</a></h5>
+    <div>
+        <h5>Name: </h5>
+        <p><%= pet.name %></p>
+        <br>
+        <h5>Birthday: </h5>
+        <p><%= pet.birthday %></p>
+        <br>
+        <h5>Age:</h5>
+        <p><%= pet.age %></p>
+        <br>
+        <h5>Species:</h5>
+        <p><%= pet.species %></p>
+        <br>
+        <h5>Sex:</h5>
+        <p><%= pet.sex %></p>
+        <br>
+        <h5>Favorite Toy(s):</h5>
+        <p><%= pet.favoriteToy %></p>
+            <!-- '/:id/edit'-->
+        <a href="/pets/<%= pet.id %>/editProfile">Edit Information</a>
+    </div>
+    <div>
+<!--Display Health Tracker-->
+        <!--  sleep - number, exercise - boolean(y/n), poo - boolean(y/n), eating - boolean(y/n), mood - string -->
+    <h3>Health Tracker:</h3>
+    <% if (pet) { %>
+        <table>
+            <tr>
+                <th>Sleep:</th>
+                <td><%= health.sleep%></td>
+            </tr>
+            <tr>
+                <th>Exercise:</th>
+                <td><%= health.exercise%></td>
+            </tr>
+            <tr>
+                <th>Poo:</th>
+                <td><%= health.poo %></td>
+            </tr>
+            <tr>
+                <th>Eating:</th>
+                <td><%= health.eating %></td>
+            </tr>
+            <tr>
+                <th>Mood: </th>
+                <td><%= health.mood %></td>
+            </tr>
+        </table>
+        <% } else { %>
+            <h5>No Health Tracker Yet</h5>
+          <% } %>
+    </div>
 
+    <!--Health Tracker FORM-->
+    <div>
+        <form action="" method="POST">
+            <label>
+                Sleep:
+                <input type="number" name="sleep">
+            </label>
+            <br>
+            <label>
+                Exercise:
+                <input type="checkbox" name="exercise">
+            </label>
+            <br>
+            <label>
+                Poo:
+                <input type="checkbox" name="poo">
+            </label>
+            <br>
+            <label>
+                Eating:
+                <input type="checkbox" name="eating">
+            </label>
+            <br>
+            <label>
+                Mood:
+                <input name="mood">
+            </label>
+            <br>
+            <button type="submit">Log Health</button>
+        </form>
+    </div>
 </div>
 
 <%- include('../partials/footer') %>

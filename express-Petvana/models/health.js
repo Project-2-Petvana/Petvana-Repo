@@ -3,6 +3,10 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const healthSchema = new Schema ({
+    pet: {
+        type: Schema.Types.ObjectId,
+        ref: 'Pet'
+    },
     sleep: {
         type: Number,
         required: true,
