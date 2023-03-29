@@ -39,9 +39,9 @@ async function createPet(req, res) {
       }
 
       const { name, species, age, sex, birthday, favoriteToy } = req.body;
-      if (!name || !species || !age || !sex || !birthday || !favoriteToy) {
-        return res.status(400).json({ error: 'Missing required fields' });
-      }
+      // if (!name || !species || !age || !sex || !birthday || !favoriteToy) {
+      //   return res.status(400).json({ error: 'Missing required fields' });
+      // }
 
       const pet = new Pet({
         name,

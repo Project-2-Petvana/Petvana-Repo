@@ -80,3 +80,20 @@ body > nav {
 /* .card {
 flex-direction: row
 } */
+
+.petCard {
+  border-radius: 30px;
+  box-shadow: 10px 10px 10px;
+  border: 5px solid #f76c6c;
+}
+
+#petImage {
+  border-radius: 30px;
+}
+
+/* div#healthTrackerForm {
+  border-radius: 30px;
+  box-shadow: 10px 10px 10px;
+  border: 5px solid #f76c6c;
+  background-color: #B8C0C2;
+} */

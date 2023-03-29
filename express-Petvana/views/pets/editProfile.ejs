@@ -1,14 +1,17 @@
 <style>
     .container {
-    border: 1px solid black;
-    padding: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.container h1 {
-    margin-top: 0;
-}
+            border: 5px solid #f76c6c;
+			padding: 20px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+            background-color:#a8d0e6;
+            border-radius: 30px;
+            box-shadow: 10px 10px 10px;
+	}
+    .container h1 {
+		margin-top: 0;
+	}
 </style>
 <%- include('../partials/header') %>
 
@@ -19,11 +22,11 @@
         <h1 class="text-center"><%= pet.name %></h1>
         <div>
             <label>Birthday:</label>
-            <input type="date" name="birthday" value="<%= pet.birthday%>">
+            <input type="date" name="birthday" value="<%= pet.birthday%>" required>
         </div>
         <div>
             <label>Species:</label>
-            <select name="species" value= "<%= pet.species %>">
+            <select name="species" value= "<%= pet.species %>" required>
                 <option value="cat">Cat</option>
                 <option value="dog">Dog</option>
                 <option value="bird">Bird</option>
@@ -33,18 +36,18 @@
         </div>
         <div>
             <label class="form-label">Age:</label>
-            <input type="number" name="age" value = "<%= pet.age %>">
+            <input type="number" name="age" value = "<%= pet.age %>" required>
         </div>
         <div>
             <label>Sex:</label>
-            <select name="sex" value="<%= pet.sex %>">
+            <select name="sex" value="<%= pet.sex %>" required>
                 <option value="boy">Boy</option>
                 <option value="girl">Girl</option>
             </select>
         </div>
         <div>
             <label>Favorite Toy(s):</label> 
-            <input type="string" name="favoriteToy" value="<%= pet.favoriteToy %>">
+            <input type="string" name="favoriteToy" value="<%= pet.favoriteToy %>" required>
         </div>
         <div>
             <button type="submit" class="btn btn-light btn-outline-dark btn-sm">Save Changes</button>

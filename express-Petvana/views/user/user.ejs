@@ -1,4 +1,3 @@
-
 <%- include('../partials/header') %>
 
 <!-- <h4 class="text-center"><%= title %></h4> -->
@@ -36,24 +35,24 @@
           <tr>
 <th>
   
-    <div class="card w-100 mb-3 ">
+    <div class="card w-100 mb-3 petCard">
       <div class ="row g-0">
       <div class ="col-3">
       <% if (pet.species === "cat") { %>
         <%  %>
-         <img class="card-img-top" src="/images/cat.svg">
+         <img id="petImage" class="card-img-top p-3 " src="/images/cat.svg">
         <% } else if (pet.species === "bird") { %>
         <%  %>
-         <img class="card-img-top" src="/images/bird.svg">
+         <img id="petImage" class="card-img-top p-3 " src="/images/bird.svg">
         <% } else if (pet.species === "dog") { %>
         <%  %>
-         <img class="card-img-top" src="/images/corgi.svg">
+         <img id="petImage" class="card-img-top p-3 " src="/images/corgi.svg">
         <% } else if (pet.species === "fish") { %>
         <%  %>
-         <img class="card-img-top" src="/images/squid.svg">
+         <img id="petImage" class="card-img-top p-3 " src="/images/squid.svg">
         <% } else if (pet.species === "bunny") { %>
         <%  %>
-         <img class="card-img-top" src="/images/bunny.svg"> 
+         <img id="petImage" class="card-img-top p-3" src="/images/bunny.svg"> 
         <% } else { %>
           <p> No pet yet</p>
         <% } %>
@@ -69,7 +68,7 @@
             </a>
           </button>
           </div>
-            <div class ="col align-self-start text-right"> 
+            <div class ="col align-self-start text-right p-3"> 
             <form action="/user/<%= pet.id %>?_method=DELETE" method="POST"> 
               <button type="submit" class="btn btn-light btn-outline-dark btn-sm">
               X

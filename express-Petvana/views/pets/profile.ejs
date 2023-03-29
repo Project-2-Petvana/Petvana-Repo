@@ -1,9 +1,23 @@
+<style>
+    .container {
+    border: 5px solid #f76c6c;
+    background-color:#a8d0e6;
+    border-radius: 30px;
+    box-shadow: 10px 10px 10px;
+}
+.container h1 {
+    margin-top: 0;
+}
+.img-thumbnail {
+    border-radius: 30px;
+    margin: 3vmin;
+}
+</style>
 <%- include('../partials/header') %>
 
     <h1 class="text-center">
         <%= title %>
     </h1>
-                <img href="">
                 <div class="container mb-3">
                     <div class="row align-items-center text-center">
                         <div class="col">
@@ -38,7 +52,7 @@
                     </div>
                 </div>
                 <!--Health Tracker FORM-->
-                <div class="container mb-3">
+                <div id="heatlhTrackerForm" class="container mb-3">
                     <h3 class="text-center">Health Tracker Form</h3>
                     <form action="/pets/<%= pet.id %>" method="POST" class="row g-3 text-center">
                         <div class="col-md-2">
@@ -73,7 +87,7 @@
                 </div>
                 <!--Display Health Tracker-->
                     <!--  sleep - number, exercise - boolean(y/n), poo - boolean(y/n), eating - boolean(y/n), mood - string -->
-                <div class="container"> 
+                <div class="container table-responsive"> 
                     <h3 class="text-center">Health Data:</h3>
                     <% if (pet.health.length) { %>
                         <table class="table table-hover">
