@@ -1,6 +1,7 @@
 *{
   font-size: 20px;
   color:#374785;
+  font-family: 'Spicy Rice', cursive;
 }
 nav {
   color: white;
@@ -10,6 +11,9 @@ nav {
   margin-left: auto;
 }
 a.navbar-brand {
+  color: white;
+}
+a.login.nav-item.nav-link {
   color: white;
 }
 .navbar-nav .nav-link {

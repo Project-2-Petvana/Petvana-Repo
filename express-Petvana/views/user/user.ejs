@@ -1,7 +1,7 @@
 
 <%- include('../partials/header') %>
 
-<h4 class="text-center"><%= title %></h4>
+<!-- <h4 class="text-center"><%= title %></h4> -->
 <!-- <table id="list">
   <table>
     <tr>
@@ -17,8 +17,9 @@
       <td><%= user.email %></td>
     </tr>
 </table> -->
-
-<img src="<%= user.avatar %>" class="rounded mx-auto d-block img-fluid"  alt="Avatar">
+<div class="h-100 d-flex align-items-center justify-content-center">
+  <img src="images/petvana.png" height="250" width="250">
+</div>
 <br>
 <div class="container-fluid text-center">
   <h3>Welcome to Petvana, <%= user.name %>!</h3>
