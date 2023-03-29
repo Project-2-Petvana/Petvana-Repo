@@ -16,7 +16,7 @@ async function index(req, res) {
 try {
 const user = await User.findById(req.user.id).populate('pet');
 // const pet = await Pet.find({user: pet._id});
-    res.render('user/user', {title: 'User Profile', user});
+    res.render('user/user', {title: "User Profile", user});
 } catch(err) {
     console.log(err);
     res.sendStatus(500);

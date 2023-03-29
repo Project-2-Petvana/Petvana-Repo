@@ -1,13 +1,35 @@
+nav {
+  color: white;
+
+}
+.navbar-nav .nav-link {
+    color: white;
+}
 body {
-  padding: 50px;
+  padding: 10px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 
 }
 
 a {
-  color: #00B7FF;
+  color: black;
+}
+a:hover{
+  color:white;
 }
 
+.navbar-nav .nav-link>a:hover:not(.active) {
+  color: white;
+  background-color: #424748;
+}
+
+.navbar-nav .nav-link > a.active {
+  color: white;
+  cursor: default;
+}
+body{
+  align-items: center;
+}
 body > nav {
   grid-area: nav;
   background-color: #B8C0C2;

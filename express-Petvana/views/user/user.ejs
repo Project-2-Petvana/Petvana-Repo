@@ -1,10 +1,10 @@
 <%- include('../partials/header') %>
 
-<h1><%= title %></h1>
-<table id="list">
+<h4 class="text-center"><%= title %></h4>
+<!-- <table id="list">
   <table>
     <tr>
-      <th>Avatar:</th>
+      <th></th>
       <td><img src="<%= user.avatar %>" alt="Avatar"></td>
     </tr>
     <tr>
@@ -15,7 +15,15 @@
       <th>Email:</th>
       <td><%= user.email %></td>
     </tr>
-</table>
+</table> -->
+
+<img src="<%= user.avatar %>" class="rounded mx-auto d-block img-fluid"  alt="Avatar">
+<br>
+<div class="container-fluid text-center">
+  <h3>Welcome to Petvana, <%= user.name %>!</h3>
+  <h5>Keeping track of your pets wellbeing is our only goal.</h5>
+  <h5>Please add your pets and log their health on a daily basis.</h5>
+</div>
 
 
 <table>
@@ -42,7 +50,24 @@
               Remove Pet
              </button>
             </form>
-
+            <div class="">
+              <% if (pet.species === cat) {%>
+              <% return %>
+              <%= <img src="../public/images/cat.svg">%>
+              <% } else if (pet.species === bird) {%>
+              <% return %>
+              <%= <img src="../public/images/bird.svg">%>
+              <% } else if (pet.species === dog) {%>
+              <% return %>
+              <%= <img src="../public/images/dog.svg">%>
+              <% } else if (pet.species === fish) {%>
+              <% return %>
+              <%= <img src="../public/images/fish.svg">%>
+              <% } else if (pet.species === bunny) {%>
+              <% return %>
+              <%= <img src="../public/images/bunny.svg">%>
+              <% } else {}%>
+            </div>
          
         </div>
       </div>
