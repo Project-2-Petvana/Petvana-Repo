@@ -51,8 +51,8 @@ app.use(methodOverride('_method'));
 
 app.use('/', indexRouter);
 app.use('/user', userRouter);
-app.use('/pets', petsRouter);
-app.use('/health', healthRouter);
+app.use('/pets', petsRouter, healthRouter);
+// app.use('/health', healthRouter);
 
 
 // catch 404 and forward to error handler

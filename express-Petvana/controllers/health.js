@@ -17,7 +17,7 @@ async function createHealth (req, res) {
         const user = await User.findById(req.user.id);
         const petId= req.params.id;
         const pet = await Pet.findById(petId);
-
+        console.log('user, and pet have been found')
         //setting what properties will be in req.body
         const { sleep, exercise, poo, eating, mood } = req.body
 
@@ -29,9 +29,10 @@ async function createHealth (req, res) {
             mood,
             pet: pet._id
         });
-
+        console.log('made it past making the health')
         await health.save();
-        pet.health.push(req.body);
+        console.log('DOES THIS WORK?', health)
+        pet.health.push(health._id);
         console.log("HEALTH", req.body)
         await pet.save();
         console.log(health)
