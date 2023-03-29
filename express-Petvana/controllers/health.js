@@ -31,7 +31,7 @@ async function createHealth (req, res) {
         await pet.save();
         console.log(health)
 
-        res.redirect('/pets/profile')
+        res.redirect(`/pets/${pet._id}`);
     } catch (err) {
         console.error(err);
         res.status(500).send(err.message);

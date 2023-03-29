@@ -1,92 +1,123 @@
 <%- include('../partials/header') %>
 
-<h1><%= title %><h1>
-<img href="">
-<div>
-    <div>
-        <h5>Name: </h5>
-        <p><%= pet.name %></p>
-        <br>
-        <h5>Birthday: </h5>
-        <p><%= pet.birthday %></p>
-        <br>
-        <h5>Age:</h5>
-        <p><%= pet.age %></p>
-        <br>
-        <h5>Species:</h5>
-        <p><%= pet.species %></p>
-        <br>
-        <h5>Sex:</h5>
-        <p><%= pet.sex %></p>
-        <br>
-        <h5>Favorite Toy(s):</h5>
-        <p><%= pet.favoriteToy %></p>
-            <!-- '/:id/edit'-->
-        <a href="/pets/<%= pet.id %>/editProfile">Edit Information</a>
-    </div>
-    <div>
-<!--Display Health Tracker-->
-        <!--  sleep - number, exercise - boolean(y/n), poo - boolean(y/n), eating - boolean(y/n), mood - string -->
-    <h3>Health Tracker:</h3>
-    <% if (health) { %>
-        <table>
-            <tr>
-                <th>Sleep:</th>
-                <td><%= health.sleep%></td>
-            </tr>
-            <tr>
-                <th>Exercise:</th>
-                <td><%= health.exercise%></td>
-            </tr>
-            <tr>
-                <th>Poo:</th>
-                <td><%= health.poo %></td>
-            </tr>
-            <tr>
-                <th>Eating:</th>
-                <td><%= health.eating %></td>
-            </tr>
-            <tr>
-                <th>Mood: </th>
-                <td><%= health.mood %></td>
-            </tr>
-        </table>
-        <% } else { %>
-            <h5>No Health Data Yet</h5>
-          <% } %>
-    </div>
+    <h1>
+        <%= title %>
+    </h1>
+                <img href="">
+                <div>
+                    <table>
+                        <tr>
+                            <th>Name: </th>
+                            <td>
+                                <%= pet.name %>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Birthday: </th>
+                            <td>
+                                <%= pet.birthday %>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Age:</th>
+                            <td>
+                                <%= pet.age %>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Species:</th>
+                            <td>
+                                <%= pet.species %>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Sex:</th>
+                            <td>
+                                <%= pet.sex %>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Favorite Toy(s):</th>
+                            <td>
+                                <%= pet.favoriteToy %>
+                            </td>
+                        </tr>
+                            <tr>
+                                <th>
+                            <!-- '/:id/edit'-->
+                            <a href="/pets/<%= pet.id %>/editProfile">Edit Profile</a>
+                                </th>
+                        </tr>
+                    </table>
+                </div>
+                <div>
 
-    <!--Health Tracker FORM-->
-    <div>
-        <form action="" method="POST">
-            <label>
-                Sleep:
-                <input type="number" name="sleep">
-            </label>
-            <br>
-            <label>
-                Exercise:
-                <input type="checkbox" name="exercise">
-            </label>
-            <br>
-            <label>
-                Poo:
-                <input type="checkbox" name="poo">
-            </label>
-            <br>
-            <label>
-                Eating:
-                <input type="checkbox" name="eating">
-            </label>
-            <br>
-            <label>
-                Mood:
-                <input name="mood">
-            </label>
-            <br>
-            <button type="submit">Log Health</button>
-        </form>
-    </div>
-</div>
 
-<%- include('../partials/footer') %>
+                <!--Health Tracker FORM-->
+                <div>
+                    <h3>Health Tracker Form</h3>
+                    <form action="/pets/<%= pet.id %>" method="POST">
+                        <label>
+                            Sleep:
+                            <input type="number" name="sleep">
+                        </label>
+                        <br>
+                        <label>
+                            Exercise:
+                            <input type="checkbox" name="exercise">
+                        </label>
+                        <br>
+                        <label>
+                            Poo:
+                            <input type="checkbox" name="poo">
+                        </label>
+                        <br>
+                        <label>
+                            Eating:
+                            <input type="checkbox" name="eating">
+                        </label>
+                        <br>
+                        <label>
+                            Mood:
+                            <input name="mood">
+                        </label>
+                        <br>
+                        <button type="submit">Log Health</button>
+                    </form>
+                </div>
+                </div>
+
+                    <!--Display Health Tracker-->
+                    <!--  sleep - number, exercise - boolean(y/n), poo - boolean(y/n), eating - boolean(y/n), mood - string -->
+                    <h3>Health Tracker:</h3>
+                    <% if (health) { %>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Date<th>
+                                    <th>Sleep</th> 
+                                    <th>Exercise</th> 
+                                    <th>Poo</th> 
+                                    <th>Eating</th> 
+                                    <th>Mood</th> 
+                                </tr>
+                            </thead> 
+                            <tbody>
+                                <% health.forEach((h) => { %>
+                                    <tr>
+                                        <td><%= h.createdAt.toLocaleDateString() %></td>
+                                        <td><%= h.sleep %></td>
+                                        <td><%= h.exercise %></td>
+                                        <td><%= h.poo %></td>
+                                        <td><%= h.eating %></td>
+                                        <td><%= h.mood %></td>
+                                    </tr>
+                                <% }) %>
+                            </tbody>
+                        </table>
+                        <% } else { %>
+                            <h5>No Health Data Yet</h5>
+                            <% } %>
+                </div>
+
+                <%- include('../partials/footer') %>
