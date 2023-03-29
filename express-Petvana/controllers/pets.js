@@ -14,10 +14,12 @@ async function show(req, res) {
         const user = await User.findById(req.user.id);
         console.log(user, 'user')
         const petId= req.params.id;
-        const pet = await Pet.findById(petId);
+
+        const pet = await Pet.findById(petId).populate('health');
         if (Health) { 
             const health = await Health.findById(req.params.id);
             console.log(pet, 'pet')
+            console.log(health, 'health show function')
             res.render('pets/profile', {title: 'Pet Profile', user, pet, health});
         } else {
             res.render('pets/profile', {title: 'Pet Profile', user, pet});
