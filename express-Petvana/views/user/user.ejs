@@ -21,9 +21,6 @@
         <% user.pet.forEach(function(pet) { %>
           <tr>
             <td><%= pet.name %></td>
-            <td>Species: <%= pet.species %></td>
-            <td>Age: <%= pet.age %></td>
-            <td>Sex: <%= pet.sex %></td>
             <td><a href="/pets/<%= pet.id%>">Pet profile</a></td>
             <form action="/user/<%= pet.id %>?_method=DELETE" method="POST">
               <td><button type="submit">X</button></td>

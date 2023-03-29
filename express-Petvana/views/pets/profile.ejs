@@ -58,7 +58,7 @@
                     <h3>Health Tracker Form</h3>
                     <form action="/pets/<%= pet.id %>" method="POST">
                         <label>
-                            Sleep:
+                            Sleep(# of hours):
                             <input type="number" name="sleep">
                         </label>
                         <br>
@@ -96,8 +96,8 @@
                         <table>
                             <thead>
                                 <tr>
-                                    <th>Date<th>
-                                    <th>Sleep</th> 
+                                    <th>Date</th>
+                                    <th>Sleep(hours)</th> 
                                     <th>Exercise</th> 
                                     <th>Poo</th> 
                                     <th>Eating</th> 
@@ -108,7 +108,7 @@
                                 <% pet.health.forEach(function(h) { %>
                                     <tr>
                                         <td><%= h.createdAt.toLocaleDateString() %></td>
-                                        <td><%= h.sleep %></td>
+                                        <td><%= h.sleep %> hours </td>
                                         <td><%= h.exercise %></td>
                                         <td><%= h.poo %></td>
                                         <td><%= h.eating %></td>
