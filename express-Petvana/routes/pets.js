@@ -14,4 +14,4 @@ router.get('/:id/editProfile', ensureLoggedIn, petsCtrl.editInfo)
 // PUT pets/:id
 router.put('/:id', ensureLoggedIn, petsCtrl.updateInfo)
 
-module.exports = router
+module.exports = router;

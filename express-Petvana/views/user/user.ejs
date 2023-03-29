@@ -15,16 +15,39 @@
       <th>Email:</th>
       <td><%= user.email %></td>
     </tr>
+</table>
+
+
+<table>
     <tr>
-      <th>Pet(s):</th>
-      <% if (user.pet && user.pet.length > 0) { %>
+      <th><h3>Pet(s):</h3></th>
+      <% if (user.pet && user.pet.length >= 0) { %>
         <% user.pet.forEach(function(pet) { %>
           <tr>
-            <td><%= pet.name %></td>
-            <td><a href="/pets/<%= pet.id%>">Pet profile</a></td>
+<th>
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title"><%= pet.name %></h5>
+        <h6 class="card-subtitle mb-2 text-muted"><%= pet.species %></h6>
+        <p class="card-text">The pet profile includes a health tracker to log your health data.</p>
+        <div class = "btn-toolbar">
+
+          <button class="btn btn-light btn-outline-dark btn-sm">
+            <a href="/pets/<%= pet.id%>" class="card-link">
+              Pet Profile
+            </a>
+            </button>
             <form action="/user/<%= pet.id %>?_method=DELETE" method="POST">
-              <td><button type="submit">X</button></td>
+              <button type="submit" class="btn btn-light btn-outline-dark btn-sm">
+              Remove Pet
+             </button>
             </form>
+
+         
+        </div>
+      </div>
+    </div>
+  </th>
           </tr>
         <% }); %>
       <% } else { %>
@@ -34,13 +57,6 @@
       <% } %>
     </tr>
   </table>
-
-
-
-
-  
-        </tr>
-      </tbody>
     </table>
 
 

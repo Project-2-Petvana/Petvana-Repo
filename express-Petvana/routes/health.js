@@ -6,4 +6,4 @@ const ensureLoggedIn = require('../config/ensureLoggedIn');
 // POST /pets/:id
 router.post('/:id', ensureLoggedIn, healthCtrl.createHealth);
 
-module.exports = router
+module.exports = router;
