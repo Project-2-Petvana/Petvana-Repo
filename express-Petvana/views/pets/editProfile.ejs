@@ -3,41 +3,39 @@
 <h1 class="text-center"><%= pet.name %></h1>
 <br>
 <div>
-    <form action="/pets/<%= pet.id %>?_method=PUT" method="POST">
-        <label>
-            Birthday:
-            <input type="date" name="birthday" value ="<%= pet.birthday%>">
-        </label>
-        <br>
-        <label>
-            Species:
-            <select name="species" value = "<%= pet.species %>">
+    <form action="/pets/<%= pet.id %>?_method=PUT" method="POST" class="col">
+        <div class="row-md-4 mb-3">
+            <label class="form-label">Birthday:</label>
+            <input type="date" name="birthday" value ="<%= pet.birthday%>" class="form-control">
+        </div>
+        <div class="row-md-3 mb-3">
+            <label class="form-label">Species:</label>
+            <select name="species" value = "<%= pet.species %>" class="form-control">
                 <option value="cat">Cat</option>
                 <option value="dog">Dog</option>
                 <option value="bird">Bird</option>
                 <option value="bunny">Bunny</option>
                 <option value="fish">Fish</option>
             </select>
-        </label>
-        <br>
-        <label>
-            Age:
-            <input type="number" name="age" value = "<%= pet.age %>">
-        </label>
-        <br>
-        <label>
-            Sex:
-            <select name="sex" value ="<%= pet.sex %>">
+        </div>
+        <div class="row-md-3 mb-3">
+            <label class="form-label">Age:</label>
+            <input type="number" name="age" value = "<%= pet.age %>" class="form-control">
+        </div>
+        <div class="row-md-3 mb-3">
+            <label class="form-label">Sex:</label>
+            <select name="sex" value ="<%= pet.sex %>" class="form-control">
                 <option value="boy">Boy</option>
                 <option value="girl">Girl</option>
             </select>
-        </label>
-        <br>
-        <label>
-            Favorite Toy(s):
-            <input type="string" name="favoriteToy" value="<%= pet.favoriteToy %>">
-        </label> 
-        <button type="submit">Save Changes</button>
+        </div>
+        <div class="row-md-3 mb-3">
+            <label class="form-label">Favorite Toy(s):</label> 
+            <input type="string" name="favoriteToy" value="<%= pet.favoriteToy %>" class="form-control">
+        </div>
+        <div class="text-center">
+            <button type="submit" class="btn btn-light btn-outline-dark btn-sm">Save Changes</button>
+        </div>
     </form>
 </div>
 
