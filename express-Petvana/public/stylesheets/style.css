@@ -9,6 +9,9 @@ nav {
 .navbar-nav {
   margin-left: auto;
 }
+a.navbar-brand {
+  color: white;
+}
 .navbar-nav .nav-link {
     color: white;
 }
@@ -17,8 +20,8 @@ a.nav-link {
 }
 
 a.nav-link:hover {
-  background-color: #e9e5dc;
-  color: #815034;
+  background-color: #a8d0e6;
+  color: #374785;
 }
 
 button.navbar-toggle {
@@ -32,10 +35,19 @@ body {
 }
 
 a {
-  color: black;
+  color: #374785;
 }
 a:hover{
   color:white;
+  background-color: #374785;
+}
+button.btn.btn-light.btn-outline-dark.btn-sm{
+color:#374785;
+}
+
+button.btn.btn-light.btn-outline-dark.btn-sm:hover {
+  background-color: #374785;
+  color: white;
 }
 
 body{
