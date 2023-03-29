@@ -34,7 +34,7 @@ const petSchema = new Schema ({
     birthday: {  
         type: Date,
     },
-    healthTracker: [{  
+    health: [{  
         type: Schema.Types.ObjectId,
         ref: 'Health'
     }]

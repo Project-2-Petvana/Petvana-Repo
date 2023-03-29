@@ -16,6 +16,8 @@ require('./config/passport');
 var indexRouter = require('./routes/index');
 var userRouter = require('./routes/user');
 var petsRouter = require('./routes/pets');
+var healthRouter = require('./routes/health');
+
 
 var app = express();
 
@@ -50,6 +52,7 @@ app.use(methodOverride('_method'));
 app.use('/', indexRouter);
 app.use('/user', userRouter);
 app.use('/pets', petsRouter);
+app.use('/health', healthRouter);
 
 
 // catch 404 and forward to error handler

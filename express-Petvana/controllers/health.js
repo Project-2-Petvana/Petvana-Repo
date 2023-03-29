@@ -1,14 +1,18 @@
 const User = require('../models/user');
 const Pet = require('../models/pet');
-const Health = require('../models/health')
+const Health = require('../models/health');
 
 module.exports = {
     createHealth
 };
 
 async function createHealth (req, res) {
+    console.log('createHealth');
+    req.body.exercise = !!req.body.exercise;
+    req.body.poo = !!req.body.poo;
+    req.body.eating = !!req.body.eating;
     try {
-
+        
         //grabbing all models
         const user = await User.findById(req.user.id);
         const petId= req.params.id;
@@ -27,7 +31,8 @@ async function createHealth (req, res) {
         });
 
         await health.save();
-        pet.health.push(health._id);
+        pet.health.push(req.body);
+        console.log("HEALTH", req.body)
         await pet.save();
         console.log(health)
 
@@ -36,4 +41,4 @@ async function createHealth (req, res) {
         console.error(err);
         res.status(500).send(err.message);
     }
-}
+};
