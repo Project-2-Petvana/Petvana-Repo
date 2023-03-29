@@ -6,6 +6,9 @@ nav {
   color: white;
 
 }
+.navbar-nav {
+  margin-left: auto;
+}
 .navbar-nav .nav-link {
     color: white;
 }
@@ -24,7 +27,8 @@ button.navbar-toggle {
 body {
   padding: 10px;
   font: 15px "Lucida Grande", Helvetica, Arial, sans-serif;
-
+  align-items: center;
+  align-content: center;
 }
 
 a {
@@ -56,3 +60,7 @@ body > nav {
 .login img {
   height: 30px;
 }
+
+/* .card {
+flex-direction: row
+} */

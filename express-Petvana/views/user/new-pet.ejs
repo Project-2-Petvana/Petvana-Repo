@@ -1,16 +1,26 @@
+<style>
+    		.container {
+            border: 1px solid black;
+			padding: 20px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+        .container h1 {
+			margin-top: 0;
+		}
+</style>
 <%- include('../partials/header') %>
-
+<body>
 <!-- empty img src for pet logos...may not be needed -->
 <img src="">
 <img src="">
-
-<h1>Create a New Pet</h1>
-
+<div class="container">
 <!-- can split into two divs for column alignment according to wireframe-->
 <!-- double check form action end point and method-->
 
 <form action="/user" method="POST">
-    <div>
+    <h1>Create a New Pet</h1>
         <label>Name</label><input type ="text" name="name">
         <br>
         <label>Species</label>
@@ -34,10 +44,12 @@
         <br>
         <label>Birthday</label><input type ="date" name="birthday">
 
-    </div>
     <br>
     <label>New Pet</label>
     <input type="submit" value="Add Pet">
 </form>
 
+</div>
+
+</body>
 <%- include('../partials/footer') %>
