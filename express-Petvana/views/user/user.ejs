@@ -34,6 +34,26 @@
           <tr>
 <th>
     <div class="card">
+
+      <% if (pet.species === "cat") { %>
+        <% return %>
+         <img class="card-img-top" src="../public/images/cat.svg">
+        <% } else if (pet.species === "bird") { %>
+        <% return %>
+         <img class="card-img-top" src="../public/images/bird.svg">
+        <% } else if (pet.species === "dog") { %>
+        <% return %>
+         <img class="card-img-top" src="../public/images/dog.svg">
+        <% } else if (pet.species === "fish") { %>
+        <% return %>
+         <img class="card-img-top" src="../public/images/squid.svg">
+        <% } else if (pet.species === "bunny") { %>
+        <% return %>
+         <img class="card-img-top" src="../public/images/bunny.svg"> %
+        <% } else { %>
+          <p> No pet yet</p>
+        <% } %>
+
       <div class="card-body">
         <h5 class="card-title"><%= pet.name %></h5>
         <h6 class="card-subtitle mb-2 text-muted"><%= pet.species %></h6>
@@ -50,25 +70,6 @@
               Remove Pet
              </button>
             </form>
-            <div class="">
-              <% if (pet.species === cat) {%>
-              <% return %>
-              <%= <img src="../public/images/cat.svg">%>
-              <% } else if (pet.species === bird) {%>
-              <% return %>
-              <%= <img src="../public/images/bird.svg">%>
-              <% } else if (pet.species === dog) {%>
-              <% return %>
-              <%= <img src="../public/images/dog.svg">%>
-              <% } else if (pet.species === fish) {%>
-              <% return %>
-              <%= <img src="../public/images/fish.svg">%>
-              <% } else if (pet.species === bunny) {%>
-              <% return %>
-              <%= <img src="../public/images/bunny.svg">%>
-              <% } else {}%>
-            </div>
-         
         </div>
       </div>
     </div>

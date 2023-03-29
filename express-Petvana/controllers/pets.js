@@ -22,7 +22,7 @@ async function show(req, res) {
             console.log(health, 'health show function')
             res.render('pets/profile', {title: 'Pet Profile', user, pet, health});
         } else {
-            res.render('pets/profile', {title: 'Pet Profile', user, pet});
+            res.render('pets/profile', {title: `${pet.name}'s Profile`, user, pet});
         }
     } catch(err) {
         console.log(err);

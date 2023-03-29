@@ -1,6 +1,6 @@
 <%- include('../partials/header') %>
 
-<h1><%= pet.name %></h1>
+<h1 class="text-center"><%= pet.name %></h1>
 <br>
 <div>
     <form action="/pets/<%= pet.id %>?_method=PUT" method="POST">

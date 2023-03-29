@@ -11,18 +11,22 @@
     .navbar-nav {
         margin-left: auto;
     }
+    button {
+      margin-left: auto;
+    }
 </style>
 </head>
 <body style="background-color: #e9e5dc">
-
-  <nav class="navbar navbar-expand-lg bg-body-tertiary color-light" style="background-color: #815034">
+  
+  <nav class="navbar navbar-expand-lg bg-body-tertiary color-light" style="background-color: #815034" data-bs-toggle>
     <div class="container-fluid">
       <% if (user) { %>
-      <a class="navbar-brand" href="/user">
-        <img src="../../public/images/pawprint.svg" width="30" height="24">
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+        <button type="button" 
+        class="navbar-toggle" 
+        data-toggle="collapse" 
+        data-target=".navbar-collapse"
+      style="background-color: #e9e5dc;">
+        <span class="navbar-toggler-icon">-</span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
@@ -36,6 +40,7 @@
         </div>
       </div>
     </div>
+ 
   </nav>
 
 
