@@ -15,7 +15,7 @@
                         <tr>
                             <th>Birthday: </th>
                             <td>
-                                <%= pet.birthday %>
+                                <%= pet.birthday.toLocaleDateString() %>
                             </td>
                         </tr>
                         <tr>
@@ -55,34 +55,35 @@
 
                 <!--Health Tracker FORM-->
                 <div>
-                    <h3>Health Tracker Form</h3>
-                    <form action="/pets/<%= pet.id %>" method="POST">
-                        <label>
-                            Sleep(# of hours):
-                            <input type="number" name="sleep">
-                        </label>
-                        <br>
-                        <label>
-                            Exercise:
-                            <input type="checkbox" name="exercise">
-                        </label>
-                        <br>
-                        <label>
-                            Poo:
-                            <input type="checkbox" name="poo">
-                        </label>
-                        <br>
-                        <label>
-                            Eating:
-                            <input type="checkbox" name="eating">
-                        </label>
-                        <br>
-                        <label>
-                            Mood:
-                            <input type="text" name="mood">
-                        </label>
-                        <br>
-                        <button type="submit">Log Health</button>
+                    <h3 class="text-center">Health Tracker Form</h3>
+                    <form action="/pets/<%= pet.id %>" method="POST" class="row g-3 text-center">
+                        <div class="col-md-3">
+                            <label class="form-label">Sleep(# of hours):</label>
+                            <input type="number" name="sleep" class="form-control form-control-sm"> 
+                        </div>
+                        
+                        <div class="col-md-1">
+                            <label class="form-label">Exercise:</label>
+                            <input type="checkbox" name="exercise" class="form-control form-control-sm">
+                        </div>
+                        
+                        <div class="col-md-1">
+                            <label class="form-label">Poo:</label>
+                            <input type="checkbox" name="poo" class="form-control form-control-sm">
+                        </div>
+                        
+                        <div class="col-md-1">
+                            <label class="form-label">Eating:</label>
+                            <input type="checkbox" name="eating" class="form-control form-control-sm">
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <label class="form-label">Mood:</label>
+                            <input type="text" name="mood" class="form-control form-control-sm">
+                        </div>
+                        <div class="col text-center">
+                            <button type="submit" class="btn btn-default">Log Health</button>
+                        </div>
                     </form>
                 </div>
 
