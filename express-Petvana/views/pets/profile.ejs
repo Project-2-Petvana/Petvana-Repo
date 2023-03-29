@@ -4,54 +4,41 @@
         <%= title %>
     </h1>
                 <img href="">
-                <div>
-                    <table>
-                        <tr>
-                            <th>Name: </th>
-                            <td>
-                                <%= pet.name %>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>Birthday: </th>
-                            <td>
-                                <%= pet.birthday.toLocaleDateString() %>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>Age:</th>
-                            <td>
-                                <%= pet.age %>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>Species:</th>
-                            <td>
-                                <%= pet.species %>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>Sex:</th>
-                            <td>
-                                <%= pet.sex %>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>Favorite Toy(s):</th>
-                            <td>
-                                <%= pet.favoriteToy %>
-                            </td>
-                        </tr>
-                            <tr>
-                                <th>
-                            <!-- '/:id/edit'-->
-                            <a href="/pets/<%= pet.id %>/editProfile">Edit Profile</a>
-                                </th>
-                        </tr>
-                    </table>
+                <div class="container mb-3">
+                    <div class="row align-items-center text-center">
+                        <div class="col">
+                            <h4>Name: <%= pet.name %></h4>
+                            <h4>Birthday: <%= pet.birthday.toLocaleDateString() %></h4>
+                            <h4>Age:  <%= pet.age %></h4>
+                            <h4>Species: <%= pet.species %></h4>
+                            <h4>Sex: <%= pet.sex %></h4>
+                            <h4>Favorite Toy(s): <%= pet.favoriteToy %></h4>
+                            <button class="btn btn-light btn-outline-dark btn-sm">
+                                <a href="/pets/<%= pet.id %>/editProfile" class="text-decoration-none">Edit Profile</a>
+                            </button>
+                        </div>
+                        <div class="col">
+                            <% if (pet.species === "cat") { %>
+                                <%  %>
+                                 <img class="img-thumbnail" src="/images/cat.svg">
+                                <% } else if (pet.species === "bird") { %>
+                                <%  %>
+                                 <img class="img-thumbnail" src="/images/bird.svg">
+                                <% } else if (pet.species === "dog") { %>
+                                <%  %>
+                                 <img class="img-thumbnail" src="/images/corgi.svg">
+                                <% } else if (pet.species === "fish") { %>
+                                <%  %>
+                                 <img class="img-thumbnail" src="/images/squid.svg">
+                                <% } else if (pet.species === "bunny") { %>
+                                <%  %>
+                                 <img class="img-thumbnail" src="/images/bunny.svg"> 
+                                <% } %>
+                        </div>
+                    </div>
                 </div>
                 <!--Health Tracker FORM-->
-                <div>
+                <div class="mb-3">
                     <h3 class="text-center">Health Tracker Form</h3>
                     <form action="/pets/<%= pet.id %>" method="POST" class="row g-3 text-center">
                         <div class="col-md-3">

@@ -1,16 +1,29 @@
+<style>
+    .container {
+    border: 1px solid black;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container h1 {
+    margin-top: 0;
+}
+</style>
 <%- include('../partials/header') %>
 
-<h1 class="text-center"><%= pet.name %></h1>
 <br>
 <div class="container">
-    <form action="/pets/<%= pet.id %>?_method=PUT" method="POST" class="col">
-        <div class="row-md-4 mb-3">
-            <label class="form-label">Birthday:</label>
-            <input type="date" name="birthday" value ="<%= pet.birthday%>" class="form-control">
+    
+    <form action="/pets/<%= pet.id %>?_method=PUT" method="POST">
+        <h1 class="text-center"><%= pet.name %></h1>
+        <div>
+            <label>Birthday:</label>
+            <input type="date" name="birthday" value="<%= pet.birthday%>">
         </div>
-        <div class="row-md-3 mb-3">
-            <label class="form-label">Species:</label>
-            <select name="species" value = "<%= pet.species %>" class="form-control">
+        <div>
+            <label>Species:</label>
+            <select name="species" value= "<%= pet.species %>">
                 <option value="cat">Cat</option>
                 <option value="dog">Dog</option>
                 <option value="bird">Bird</option>
@@ -18,22 +31,22 @@
                 <option value="fish">Fish</option>
             </select>
         </div>
-        <div class="row-md-3 mb-3">
+        <div>
             <label class="form-label">Age:</label>
-            <input type="number" name="age" value = "<%= pet.age %>" class="form-control">
+            <input type="number" name="age" value = "<%= pet.age %>">
         </div>
-        <div class="row-md-3 mb-3">
-            <label class="form-label">Sex:</label>
-            <select name="sex" value ="<%= pet.sex %>" class="form-control">
+        <div>
+            <label>Sex:</label>
+            <select name="sex" value="<%= pet.sex %>">
                 <option value="boy">Boy</option>
                 <option value="girl">Girl</option>
             </select>
         </div>
-        <div class="row-md-3 mb-3">
-            <label class="form-label">Favorite Toy(s):</label> 
-            <input type="string" name="favoriteToy" value="<%= pet.favoriteToy %>" class="form-control">
+        <div>
+            <label>Favorite Toy(s):</label> 
+            <input type="string" name="favoriteToy" value="<%= pet.favoriteToy %>">
         </div>
-        <div class="text-center">
+        <div>
             <button type="submit" class="btn btn-light btn-outline-dark btn-sm">Save Changes</button>
         </div>
     </form>

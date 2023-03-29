@@ -1,3 +1,4 @@
+
 <%- include('../partials/header') %>
 
 <h4 class="text-center"><%= title %></h4>
@@ -25,7 +26,7 @@
   <h5>Please add your pets and log their health on a daily basis.</h5>
 </div>
 
-
+<div class="d-flex align-items-center justify-content-center">
 <table>
     <tr>
       <th><h3>Pet(s):</h3></th>
@@ -33,8 +34,10 @@
         <% user.pet.forEach(function(pet) { %>
           <tr>
 <th>
-    <div class="card w-100">
-      <div>
+  
+    <div class="card w-100 mb-3 ">
+      <div class ="row g-0">
+      <div class ="col-3">
       <% if (pet.species === "cat") { %>
         <%  %>
          <img class="card-img-top" src="/images/cat.svg">
@@ -54,24 +57,30 @@
           <p> No pet yet</p>
         <% } %>
       </div>
-      <div class="card-body">
+      <div class="card-body col-8">
         <h5 class="card-title"><%= pet.name %></h5>
         <h6 class="card-subtitle mb-2 text-muted"><%= pet.species %></h6>
         <p class="card-text">The pet profile includes a health tracker to log your health data.</p>
-        <div class = "btn-toolbar">
-
+        
           <button class="btn btn-light btn-outline-dark btn-sm">
             <a href="/pets/<%= pet.id%>" class="card-link">
               Pet Profile
             </a>
-            </button>
-            <form action="/user/<%= pet.id %>?_method=DELETE" method="POST">
+          </button>
+          </div>
+            <div class ="col align-self-start text-right"> 
+            <form action="/user/<%= pet.id %>?_method=DELETE" method="POST"> 
               <button type="submit" class="btn btn-light btn-outline-dark btn-sm">
-              Remove Pet
+              X
              </button>
             </form>
+          </div>
+
+            
         </div>
       </div>
+      </div>
+    </div>
     </div>
   </th>
           </tr>

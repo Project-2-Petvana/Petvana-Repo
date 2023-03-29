@@ -32,7 +32,8 @@ const petSchema = new Schema ({
         maxLength: 50
     },
     birthday: {  
-        type: Date
+        type: Date,
+        required: true,
     },
     health: [{  
         type: Schema.Types.ObjectId,
