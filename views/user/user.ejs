@@ -46,7 +46,6 @@
       </div>
       <div class="
       card-body 
-
       col-md-6
       ">
         <h5 class="card-title"><%= pet.name %></h5>
@@ -60,8 +59,9 @@
         </button>
       </div>
       <div class ="
+            col-xs-2 text-right
             col-md-2
-            align-self-start text-right p-3"> 
+            align-self-start  p-3"> 
         <form action="/user/<%= pet.id %>?_method=DELETE" method="POST"> 
         <button type="submit" class="btn btn-light btn-outline-dark btn-sm">
               X
