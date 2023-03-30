@@ -52,8 +52,6 @@ async function editInfo(req, res) {
 // This will update the static information on the profile.ejs view
 async function updateInfo(req,res) {
     try {
-        // declares a specific user to be used in the function
-        const user = await User.findById(req.user.id);
         // declares a specific pet reference id
         const petId= req.params.id;
         // declares a specific pet
