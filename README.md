@@ -31,9 +31,12 @@ Welcome to Petvana, the pet health-tracking application designed to help your pe
 ## Getting Started:
 
 * Begin your pet health journey by checking out [Petvana](https://petvana.herokuapp.com/)!
+
 * Learn about the planning behind the app by looking at this [Trello Board](https://trello.com/invite/b/xysXs5C1/ATTIf2b993d44cf886bdfa6df0f88817e92dEFB3DE0C/petvana-project)!
+
 * Our wireframe included what we created for this iteration, and possible future developments.
 ![Markdown-mark](public/images/wireframe.png)
+
 * We took a 3 model approach to our data structure with each model referencing another. 
 ![Markdown-mark](public/images/erd.png)
 
