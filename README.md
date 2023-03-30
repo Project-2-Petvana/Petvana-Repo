@@ -69,3 +69,45 @@ Welcome to Petvana, the pet health-tracking application designed to help your pe
 * Implement edit functionality of individual pet health data. 
 * Implement delete functionality of individual pet health data.
 * Incorporate a third-party API to provide cat/dog facts for the user.
+
+***
+
+## Overcoming Challenges:
+
+* The following code block represents Petvana's greatest obstacle of the project:
+```js
+async function createPet(req, res) {
+    try {
+      // Get the currently authenticated user
+      const user = await User.findById(req.user._id); 
+      if (!user) {
+        return res.status(404).json({ error: 'User not found' });
+      }
+      // setting what properties will be in req.body
+      const { name, species, age, sex, birthday, favoriteToy } = req.body;
+
+      // declares a new instance of Pet data
+      const pet = new Pet({
+        name,
+        species,
+        age,
+        sex,
+        user: user._id,
+        birthday,
+        favoriteToy
+      });
+      // saves the pet data based on the model
+      await pet.save();
+      // pushes the specific pet data into the user pet data
+      user.pet.push(pet._id);
+      await user.save();
+      // after user.pet has been saved, redirect back to the user profile page
+      res.redirect('/user');
+    } catch (err) {
+      console.error(err);
+      res.sendStatus(500);
+    }
+};
+```
+* As seen above, the createPet function creates a new pet instance and saves it to the database.
+* Technically, this was our biggest challenge for this project. It required us to integrate our learnings across different concepts into one functional piece of code. We leveraged  middleware, models, and our understanding of how data flows all into one function that is crucial to Petvana. 
