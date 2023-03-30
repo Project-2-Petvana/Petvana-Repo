@@ -7,20 +7,19 @@ module.exports = {
 };
 
 async function createHealth (req, res) {
-    console.log('createHealth');
+    // these statements convert a checkbox value into Boolean values that match the Health model
     req.body.exercise = !!req.body.exercise;
     req.body.poo = !!req.body.poo;
     req.body.eating = !!req.body.eating;
     try {
         
-        //grabbing all models
-        const user = await User.findById(req.user.id);
-        const petId= req.params.id;
+        // declares a specific pet reference id
+        const petId = req.params.id;
+        // declares a specific pet with its petId
         const pet = await Pet.findById(petId);
-        console.log('user, and pet have been found')
         //setting what properties will be in req.body
         const { sleep, exercise, poo, eating, mood } = req.body
-
+        // declares a new instance of Health data
         const health = new Health({
             sleep,
             exercise,
@@ -29,14 +28,13 @@ async function createHealth (req, res) {
             mood,
             pet: pet._id
         });
-        console.log('made it past making the health')
+        // saves the data to MongoDB
         await health.save();
-        console.log('DOES THIS WORK?', health)
+        // pushes the health data into the specific pet health data
         pet.health.push(health._id);
-        console.log("HEALTH", req.body)
+        // saves the pet data to MongoDB
         await pet.save();
-        console.log(health)
-
+        // redirects to the specific pet profile page
         res.redirect(`/pets/${pet._id}`);
     } catch (err) {
         console.error(err);

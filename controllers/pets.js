@@ -11,16 +11,19 @@ module.exports = {
 // This will show a detail page for the specific pet clicked on profile.ejs
 async function show(req, res) {
     try {
+        // declares a specific user to be used in the function
         const user = await User.findById(req.user.id);
-        console.log(user, 'user')
+        // declares a specific pet reference id
         const petId= req.params.id;
-
+        // declares a specific pet with its related health data
         const pet = await Pet.findById(petId).populate('health');
+        // if there is health data, render the page and pass through user, pet, and health
         if (Health) { 
+            // declares a specific health data to the specific pet
             const health = await Health.findById(req.params.id);
-            console.log(pet, 'pet')
-            console.log(health, 'health show function')
+            // renders the pet profile ejs in views with the specific pet of the specific user
             res.render('pets/profile', {title: 'Pet Profile', user, pet, health});
+            // if health data is not present, render the page and only pass through user, and pet
         } else {
             res.render('pets/profile', {title: `${pet.name}'s Profile`, user, pet});
         }
@@ -33,12 +36,15 @@ async function show(req, res) {
 // This will take the user to the editProfile.ejs view
 async function editInfo(req, res) {
     try {
+        // declares a specific user to be used in the function
         const user = await User.findById(req.user.id);
+         // declares a specific pet reference id
         const petId= req.params.id;
+        // declares a specific pet
         const pet = await Pet.findById(petId);
-        res.render(`pets/editProfile`, {title: 'Edit Pet Profile', user, pet});
+        // renders the editProfile view with the specific user and pet data
+        res.render('pets/editProfile', {title: 'Edit Pet Profile', user, pet});
     } catch(err) {
-        console.log(err);
         res.sendStatus(500);
     }
 };
@@ -46,18 +52,15 @@ async function editInfo(req, res) {
 // This will update the static information on the profile.ejs view
 async function updateInfo(req,res) {
     try {
-        const user = await User.findById(req.user.id);
-        console.log(user, 'user for pet edit');
+        // declares a specific pet reference id
         const petId= req.params.id;
+        // declares a specific pet
         const pet = await Pet.findById(petId);
-        console.log(pet, 'pet edit page');
+        // updates the specific pet with the data based in through the body object
         await Pet.updateOne({_id: petId}, req.body);
-        console.log('EDITTTTTTTTT', req.body);
+        // redirects to the specific pet profile page
         res.redirect(`/pets/${pet._id}`)
     } catch(err) {
-        console.log(err);
         res.sendStatus(500);
     }
 }
-// req.params.id, req.body
-// {title: 'Pet Profile', user, pet}

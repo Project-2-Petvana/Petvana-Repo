@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 // optional shortcut to the mongoose.Schema class
 const Schema = mongoose.Schema;
 
+// schema for pet data which references the health schema and user schema
 const petSchema = new Schema ({
     user: {
         type: Schema.Types.ObjectId,

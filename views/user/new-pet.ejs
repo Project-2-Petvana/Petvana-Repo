@@ -15,15 +15,10 @@
 </style>
 <%- include('../partials/header') %>
 <body>
-<!-- empty img src for pet logos...may not be needed -->
-<img src="">
-<img src="">
+<!--NEW PET FORM-->
 <div class="container">
-<!-- can split into two divs for column alignment according to wireframe-->
-<!-- double check form action end point and method-->
-
-<form action="/user" method="POST">
-    <h1>Create a New Pet</h1>
+    <form action="/user" method="POST">
+        <h1>Create a New Pet</h1>
         <label>Name: </label><input type ="text" name="name" required>
         <br>
         <label>Species</label>
@@ -46,12 +41,9 @@
         <label>Favorite Toy(s): </label><input type ="text" name="favoriteToy" required>
         <br>
         <label>Birthday: </label><input type ="date" name="birthday" required>
-
-    <br>
-    <button type="submit" class="btn btn-light btn-outline-dark btn-sm">Add Pet</button>
-</form>
-
+        <br>
+        <button type="submit" class="btn btn-light btn-outline-dark btn-sm">Add Pet</button>
+    </form>
 </div>
-
 </body>
 <%- include('../partials/footer') %>

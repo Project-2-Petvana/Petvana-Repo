@@ -2,7 +2,6 @@
 
 const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
-// // new code below
 const User = require('../models/user');
 
 passport.use(new GoogleStrategy(
@@ -31,11 +30,12 @@ passport.use(new GoogleStrategy(
     }
   ));
 
-
+// 
 passport.serializeUser(function(user, cb) {
     cb(null, user.id);
   });
 
+// this method serializes the user's unique identifier (user.id) and stores it in the session
 passport.deserializeUser(async function(userId, cb) {
     cb(null, await User.findById(userId));
     // The above async/await code replaces this code
