@@ -1,13 +1,13 @@
 # <strong><em>Petvana </em></strong>
 
-![Markdown-mark]()
+![Markdown-mark](express-Petvana/public/images/petvanahomepage.png)
 
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity)
 ![Maintainers](https://img.shields.io/badge/maintainers-collinbarlow,SallyKam,Seraphiel97-blue)
 
 ***
 ## Petvana Overview
-
+Welcome to Petvana, the pet health-tracking application designed to help your pet achieve nirvana! 
 ***
 
 ## Technologies Used: 
