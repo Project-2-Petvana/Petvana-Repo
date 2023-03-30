@@ -30,8 +30,9 @@ Welcome to Petvana, the pet health-tracking application designed to help your pe
 
 ## Getting Started:
 * Include a link to the deployed app and your Trello board with the project's planning.
-* asdf
-* asdf
+* [Petvana](https://petvana-repo-production.up.railway.app/)
+* [Trello](https://trello.com/invite/b/xysXs5C1/ATTIf2b993d44cf886bdfa6df0f88817e92dEFB3DE0C/petvana-project)
+
 
 ***
 
