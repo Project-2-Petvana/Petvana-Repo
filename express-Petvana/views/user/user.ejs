@@ -37,7 +37,7 @@
   
   <div class="container">
     <div class="card w-100 mb-3 petCard row g-0">
-      <div class ="col-sm-12 col-lg-3">
+      <div class ="col-xs-12 col-sm-3">
       <% if (pet.species === "cat") { %>
         <%  %>
          <img id="petImage" class="card-img-top p-3 " src="/images/cat.svg">
@@ -57,7 +57,7 @@
           <p> No pet yet</p>
         <% } %>
       </div>
-      <div class="card-body col-sm-12 col-lg-8">
+      <div class="card-body col-xs-12 col-sm-8">
         <h5 class="card-title"><%= pet.name %></h5>
         <h6 class="card-subtitle mb-2 text-muted"><%= pet.species %></h6>
         <p class="card-text">The pet profile includes a health tracker to log your health data.</p>
@@ -68,7 +68,7 @@
             </a>
           </button>
           </div>
-            <div class ="col-sm-12 col-lg-auto align-self-start text-right p-3"> 
+            <div class ="col-xs-12 col-sm-auto align-self-start text-right p-3"> 
             <form action="/user/<%= pet.id %>?_method=DELETE" method="POST"> 
               <button type="submit" class="btn btn-light btn-outline-dark btn-sm">
               X
