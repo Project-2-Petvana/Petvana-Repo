@@ -1,8 +1,99 @@
+*{
+  font-size: 20px;
+  color:#374785;
+  font-family: 'Spicy Rice', cursive;
+}
+nav {
+  color: white;
+
+}
+.navbar-nav {
+  margin-left: auto;
+}
+a.navbar-brand {
+  color: white;
+}
+a.login.nav-item.nav-link {
+  color: white;
+}
+.navbar-nav .nav-link {
+    color: white;
+}
+a.nav-link {
+  text-align: center;
+}
+
+a.nav-link:hover {
+  background-color: #a8d0e6;
+  color: #374785;
+}
+
+button.navbar-toggle {
+  margin-left: auto;
+}
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  padding: 10px;
+  font: 15px "Lucida Grande", Helvetica, Arial, sans-serif;
+  align-items: center;
+  align-content: center;
 }
 
 a {
-  color: #00B7FF;
+  color: #374785;
 }
+a:hover{
+  color:white;
+  background-color: #374785;
+}
+button.btn.btn-light.btn-outline-dark.btn-sm{
+color:#374785;
+}
+
+button.btn.btn-light.btn-outline-dark.btn-sm:hover {
+  background-color: #374785;
+  color: white;
+}
+
+body{
+  align-items: center;
+}
+body > nav {
+  grid-area: nav;
+  background-color: #B8C0C2;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 20px 0 30px;
+}
+
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 34px;
+}
+
+.login img {
+  height: 30px;
+}
+
+/* .card {
+flex-direction: row
+} */
+
+.petCard {
+  border-radius: 30px;
+  box-shadow: 10px 10px 10px;
+  border: 5px solid #f76c6c;
+}
+
+#petImage {
+  border-radius: 30px;
+}
+
+/* div#healthTrackerForm {
+  border-radius: 30px;
+  box-shadow: 10px 10px 10px;
+  border: 5px solid #f76c6c;
+  background-color: #B8C0C2;
+} */

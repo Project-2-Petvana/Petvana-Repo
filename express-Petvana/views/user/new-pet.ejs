@@ -1,0 +1,57 @@
+<style>
+    		.container {
+            border: 5px solid #f76c6c;
+			padding: 20px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+            background-color:#a8d0e6;
+            border-radius: 30px;
+            box-shadow: 10px 10px 10px;
+		}
+        .container h1 {
+			margin-top: 0;
+		}
+</style>
+<%- include('../partials/header') %>
+<body>
+<!-- empty img src for pet logos...may not be needed -->
+<img src="">
+<img src="">
+<div class="container">
+<!-- can split into two divs for column alignment according to wireframe-->
+<!-- double check form action end point and method-->
+
+<form action="/user" method="POST">
+    <h1>Create a New Pet</h1>
+        <label>Name: </label><input type ="text" name="name" required>
+        <br>
+        <label>Species</label>
+            <select name="species" required>
+                <option value="cat">Cat</option>
+                <option value="dog">Dog</option>
+                <option value="bird">Bird</option>
+                <option value="fish">Fish</option>
+                <option value="bunny">Bunny</option>
+            </select>
+        <br>
+        <label>Age: </label><input type ="number" name="age" required>
+        <br>
+        <label>Sex: </label>
+            <select name="sex" required>
+                <option value="boy">Boy</option>
+                <option value="girl">Girl</option>
+            </select>
+        <br>
+        <label>Favorite Toy(s): </label><input type ="text" name="favoriteToy" required>
+        <br>
+        <label>Birthday: </label><input type ="date" name="birthday" required>
+
+    <br>
+    <button type="submit" class="btn btn-light btn-outline-dark btn-sm">Add Pet</button>
+</form>
+
+</div>
+
+</body>
+<%- include('../partials/footer') %>

@@ -1,6 +1,122 @@
-<%- include('./partials/header') %>
+<style>
+    .container {
+    border: 5px solid #f76c6c;
+    background-color:#a8d0e6;
+    border-radius: 30px;
+    box-shadow: 10px 10px 10px;
+}
+.container h1 {
+    margin-top: 0;
+}
+.img-thumbnail {
+    border-radius: 30px;
+    margin: 3vmin;
+}
+</style>
+<%- include('../partials/header') %>
 
-<p>this is the profile page</p>
-<h1>Hello everyone!<h1>
+    <h1 class="text-center">
+        <%= title %>
+    </h1>
+                <div class="container mb-3">
+                    <div class="row align-items-center text-center">
+                        <div class="col">
+                            <h4>Name: <%= pet.name %></h4>
+                            <h4>Birthday: <%= pet.birthday.toLocaleDateString() %></h4>
+                            <h4>Age:  <%= pet.age %></h4>
+                            <h4>Species: <%= pet.species %></h4>
+                            <h4>Sex: <%= pet.sex %></h4>
+                            <h4>Favorite Toy(s): <%= pet.favoriteToy %></h4>
+                            <button class="btn btn-light btn-outline-dark btn-sm">
+                                <a href="/pets/<%= pet.id %>/editProfile" class="text-decoration-none">Edit Profile</a>
+                            </button>
+                        </div>
+                        <div class="col">
+                            <% if (pet.species === "cat") { %>
+                                <%  %>
+                                 <img class="img-thumbnail" src="/images/cat.svg">
+                                <% } else if (pet.species === "bird") { %>
+                                <%  %>
+                                 <img class="img-thumbnail" src="/images/bird.svg">
+                                <% } else if (pet.species === "dog") { %>
+                                <%  %>
+                                 <img class="img-thumbnail" src="/images/corgi.svg">
+                                <% } else if (pet.species === "fish") { %>
+                                <%  %>
+                                 <img class="img-thumbnail" src="/images/squid.svg">
+                                <% } else if (pet.species === "bunny") { %>
+                                <%  %>
+                                 <img class="img-thumbnail" src="/images/bunny.svg"> 
+                                <% } %>
+                        </div>
+                    </div>
+                </div>
+                <!--Health Tracker FORM-->
+                <div id="heatlhTrackerForm" class="container mb-3">
+                    <h3 class="text-center">Health Tracker Form</h3>
+                    <form action="/pets/<%= pet.id %>" method="POST" class="row g-3 text-center">
+                        <div class="col-md-2">
+                            <label class="form-label">Sleep(hours):</label>
+                            <input type="number" name="sleep" class="form-control form-control-sm"> 
+                        </div>
+                        
+                        <div class="col-md-2">
+                            <label class="form-label">Exercise:</label>
+                            <input type="checkbox" name="exercise" class="form-control form-control-sm">
+                        </div>
+                        
+                        <div class="col-md-2">
+                            <label class="form-label">Poo:</label>
+                            <input type="checkbox" name="poo" class="form-control form-control-sm">
+                        </div>
+                        
+                        <div class="col-md-2">
+                            <label class="form-label">Eating:</label>
+                            <input type="checkbox" name="eating" class="form-control form-control-sm">
+                        </div>
+                        
+                        <div class="col-md-4">
+                            <label class="form-label">Mood:</label>
+                            <input type="text" name="mood" class="form-control form-control-sm">
+                        </div>
+                        <br>
+                        <div class="col text-center mt-3">
+                            <button type="submit" class="btn btn-light btn-outline-dark btn-sm">Log Health</button>
+                        </div>
+                    </form>
+                </div>
+                <!--Display Health Tracker-->
+                    <!--  sleep - number, exercise - boolean(y/n), poo - boolean(y/n), eating - boolean(y/n), mood - string -->
+                <div class="container table-responsive"> 
+                    <h3 class="text-center">Health Data:</h3>
+                    <% if (pet.health.length) { %>
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Sleep(hours)</th> 
+                                    <th>Exercise</th> 
+                                    <th>Poo</th> 
+                                    <th>Eating</th> 
+                                    <th>Mood</th> 
+                                </tr>
+                            </thead> 
+                            <tbody>
+                                <% pet.health.forEach(function(h) { %>
+                                    <tr>
+                                        <td><%= h.createdAt.toLocaleDateString() %></td>
+                                        <td><%= h.sleep %> hours </td>
+                                        <td><%= h.exercise %></td>
+                                        <td><%= h.poo %></td>
+                                        <td><%= h.eating %></td>
+                                        <td><%= h.mood %></td>
+                                    </tr>
+                                <% }); %>
+                            </tbody>
+                        </table>
+                        <% } else { %>
+                            <h5 class="text-center">No Health Data Yet</h5>
+                            <% } %>
+                    </div>
 
-<%- include('./partials/footer') %>
+                <%- include('../partials/footer') %>
