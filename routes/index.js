@@ -6,8 +6,8 @@ const passport = require('passport');
 router.get('/', function(req, res, next) {
   res.render('homePage', { title: 'Petvana' });
 });
-// API 
 
+// API 
 //OAuth 
 // Google OAuth login route
 //passport.authenticate() method will return a middleware function that does the coordinating with google OAUTH server

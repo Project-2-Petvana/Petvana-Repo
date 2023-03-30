@@ -8,7 +8,7 @@
 ***
 
 ## Petvana Overview
-Welcome to Petvana, the pet health-tracking application designed to help your pet achieve nirvana! Through a simple connection of your Google account, the path to better pet health begins with adding your animals to your profile, which are then conveniently displayed.
+Welcome to Petvana, the pet health-tracking application designed to help your pet achieve nirvana! Through a simple connection of your Google account, the path to better pet health begins with adding your animals to your profile, which are then conveniently displayed. By clicking on each Pet Profile, all of your pet details and health data are available for perusal.
 
 ***
 
@@ -30,19 +30,32 @@ Welcome to Petvana, the pet health-tracking application designed to help your pe
 
 ## Getting Started:
 
-* [Petvana](https://petvana-repo-production.up.railway.app/)
-* [Trello](https://trello.com/invite/b/xysXs5C1/ATTIf2b993d44cf886bdfa6df0f88817e92dEFB3DE0C/petvana-project)
+* Begin your pet health journey by checking out [Petvana](https://petvana.herokuapp.com/)!
+* Learn about the planning behind the app by looking at this [Trello Board](https://trello.com/invite/b/xysXs5C1/ATTIf2b993d44cf886bdfa6df0f88817e92dEFB3DE0C/petvana-project)!
+* Our wireframe included what we created for this iteration, and possible future developments.
+![Markdown-mark](public/images/wireframe.png)
+* We took a 3 model approach to our data structure with each model referencing another. 
+![Markdown-mark](public/images/erd.png)
 
 
 ***
 
 ## Implemented User Stories:
-* As a user, I would like to be able to sign into the application with my Google account.
-* As a user, I would like to be able add a new pet to my pet tracking application.
+* As a user, I would like to be able to sign into the application with my Google account because it is quick and efficient.
+
+* As a user, I would like to be able add a new pet to my pet tracking application because I am an adoption fanatic.
+![Markdown-mark](public/images/newpet.png)
+
 * As a user, I would like to see all of my pets and a broad overview of their information.
-* As a user, I would like to be able to remove pets from my profile.
-* As a user, I would like to click a button to see a detailed view of one specific pet.
+
+* As a user, I would like to be able to remove pets from my profile because sometimes I foster pets short-term.
+
+* As a user, I would like to click a button to see a detailed view of one specific pet because I want to track their information over time.
+![Markdown-mark](public/images/petprofile.png)
+
 * As a user, I would like to be able to update static information about my pet as they change or get older.
+![Markdown-mark](public/images/updatepetprofile.png)
+
 * As a user, I would like to be able to add health data for my pet each day.
 
 ***
@@ -50,3 +63,4 @@ Welcome to Petvana, the pet health-tracking application designed to help your pe
 ## Next Steps:
 * Implement edit functionality of individual pet health data. 
 * Implement delete functionality of individual pet health data.
+* Incorporate a third-party API to provide cat/dog facts for the user.
