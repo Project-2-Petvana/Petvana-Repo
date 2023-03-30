@@ -47,7 +47,7 @@ Welcome to Petvana, the pet health-tracking application designed to help your pe
 * As a user, I would like to be able to sign into the application with my Google account because it is quick and efficient.
 
 * As a user, I would like to be able add a new pet to my pet tracking application because I am an adoption fanatic.
-![Markdown-mark](public/images/newpet.png)
+![Markdown-mark](public/images/addapet.png)
 
 * As a user, I would like to see all of my pets and a broad overview of their information.
 
