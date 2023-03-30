@@ -1,13 +1,14 @@
 # <strong><em>Petvana </em></strong>
 
-![Markdown-mark](express-Petvana/public/images/petvanahomepage.png)
 
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity)
 ![Maintainers](https://img.shields.io/badge/maintainers-collinbarlow,SallyKam,Seraphiel97-blue)
 
 ***
+
 ## Petvana Overview
 Welcome to Petvana, the pet health-tracking application designed to help your pet achieve nirvana! Through a simple connection of your Google account, the path to better pet health begins with adding your animals to your profile, which are then conveniently displayed.
+
 ***
 
 ## Technologies Used: 
@@ -31,6 +32,15 @@ Welcome to Petvana, the pet health-tracking application designed to help your pe
 * Deployed link
 * Trello board link
 
-## Next Steps
+***
+
+## Implemented User Stories:
+*AAU, I want to be able to sign into the application with my Google account because I want to keep track of my pets' data.
+*
+*
+*
+
+***
+## Next Steps:
 * edit the health data and delete the health data
 * 
