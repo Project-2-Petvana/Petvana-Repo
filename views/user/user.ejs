@@ -13,7 +13,7 @@
 <table>
     <tr>
       <th><h3>Pet(s):</h3></th>
-      <% if (user.pet && user.pet.length >= 0) { %>
+      <% if (user.pet && user.pet.length > 0) { %>
         <% user.pet.forEach(function(pet) { %>
           <tr>
 <th>
@@ -70,19 +70,21 @@
       </div>
     </div>
   </div>
-</div>
-
   </th>
-          </tr>
-        <% }); %>
+    </tr>
+      <% }); %>
       <% } else { %>
         <tr>
-          <td colspan="5">No pets found.</td>
+          <td colspan="5">
+            <button class="btn btn-light btn-outline-dark btn-sm">
+              <a href="/user/new-pet"class="text-decoration-none">
+                Add A Pet
+              </a>
+            </button>
+          </td>
         </tr>
       <% } %>
     </tr>
   </table>
-    </table>
-
-
+</div>
 <%- include('../partials/footer') %>
