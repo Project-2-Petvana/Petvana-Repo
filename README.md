@@ -1,6 +1,6 @@
 # <strong><em>Petvana </em></strong>
 
-![Markdown-mark](public/)
+![Markdown-mark](public/images/petvanahomepage.png)
 
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity)
 ![Maintainers](https://img.shields.io/badge/maintainers-collinbarlow,SallyKam,Seraphiel97-blue)
