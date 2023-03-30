@@ -7,7 +7,7 @@
 
 ***
 ## Petvana Overview
-Welcome to Petvana, the pet health-tracking application designed to help your pet achieve nirvana! 
+Welcome to Petvana, the pet health-tracking application designed to help your pet achieve nirvana! Through a simple connection of your Google account, the path to better pet health begins with adding your animals to your profile, which are then conveniently displayed.
 ***
 
 ## Technologies Used: 
