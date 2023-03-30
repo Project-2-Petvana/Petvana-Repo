@@ -9,6 +9,9 @@
   <h5>Please add your pets and log their health on a daily basis.</h5>
 </div>
 
+<!--utilizes an if/else statement to determine if a user has pets-->
+<!--if a user has pets, the respective data is loaded into elements located within bootstrap containers-->
+<!--if a user does not have pets, a button with a link to the new-pet page appears-->
 <div class="d-flex align-items-center justify-content-center">
 <table>
     <tr>
@@ -16,15 +19,12 @@
       <% if (user.pet && user.pet.length > 0) { %>
         <% user.pet.forEach(function(pet) { %>
           <tr>
-<th>
-  
-  <div class="container">
-    <div class="card w-100 mb-3 petCard">
-      <div class="row g-0">
-        <div class ="
-        card-body 
-        col-md-4
-        ">
+  <th>
+    <div class="container">
+      <div class="card w-100 mb-3 petCard">
+        <div class="row g-0">
+          <div class ="card-body col-md-4">
+          <!--displays stock images of each species-->
           <% if (pet.species === "cat") { %>
            <%  %>
           <img id="petImage" class="card-img-top p-2" src="/images/cat.svg">
@@ -43,33 +43,23 @@
           <% } else { %>
           <p> No pet yet</p>
           <% } %>
-      </div>
-      <div class="
-      card-body 
-      col-md-6
-      ">
-        <h5 class="card-title"><%= pet.name %></h5>
-        <h6 class="card-subtitle mb-2 text-muted"><%= pet.species %></h6>
-        <p class="card-text">The pet profile includes a health tracker to log your health data.</p>
-        
-        <button class="btn btn-light btn-outline-dark btn-sm">
-          <a href="/pets/<%= pet.id%>" class="card-link">
-              Pet Profile
-          </a>
-        </button>
-      </div>
-      <div class ="
-            col-xs-2 text-right
-            col-md-2
-            align-self-start  p-3"> 
-        <form action="/user/<%= pet.id %>?_method=DELETE" method="POST"> 
-        <button type="submit" class="btn btn-light btn-outline-dark btn-sm">
-              X
-        </button>
-        </form>
+        </div>
+        <div class="card-body col-md-6">
+          <h5 class="card-title"><%= pet.name %></h5>
+          <h6 class="card-subtitle mb-2 text-muted"><%= pet.species %></h6>
+          <p class="card-text">The pet profile includes a health tracker to log your health data.</p>
+          <button class="btn btn-light btn-outline-dark btn-sm">
+            <a href="/pets/<%= pet.id%>" class="card-link">Pet Profile</a>
+          </button>
+        </div>
+        <div class ="col-xs-2 text-right col-md-2 align-self-start  p-3"> 
+          <form action="/user/<%= pet.id %>?_method=DELETE" method="POST"> 
+            <button type="submit" class="btn btn-light btn-outline-dark btn-sm">X
+            </button>
+          </form>
+        </div>
       </div>
     </div>
-  </div>
   </th>
     </tr>
       <% }); %>
@@ -77,14 +67,16 @@
         <tr>
           <td colspan="5">
             <button class="btn btn-light btn-outline-dark btn-sm">
-              <a href="/user/new-pet"class="text-decoration-none">
-                Add A Pet
-              </a>
+              <a href="/user/new-pet"class="text-decoration-none">Add A Pet</a>
             </button>
           </td>
         </tr>
       <% } %>
     </tr>
-  </table>
+</table>
 </div>
+
+<br>
+<br>
+<br>
 <%- include('../partials/footer') %>

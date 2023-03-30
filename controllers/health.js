@@ -13,8 +13,9 @@ async function createHealth (req, res) {
     req.body.eating = !!req.body.eating;
     try {
         
-        //grabbing all models
+        // declares a specific pet reference id
         const petId = req.params.id;
+        // declares a specific pet with its petId
         const pet = await Pet.findById(petId);
         //setting what properties will be in req.body
         const { sleep, exercise, poo, eating, mood } = req.body

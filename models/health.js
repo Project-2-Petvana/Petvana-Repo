@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 // optional shortcut to the mongoose.Schema class
 const Schema = mongoose.Schema;
 
+// schema for tracking a pet's health that references the pet model
 const healthSchema = new Schema ({
     pet: {
         type: Schema.Types.ObjectId,
@@ -36,6 +37,5 @@ const healthSchema = new Schema ({
     }, {
         timestamps: true
     });
-
 
 module.exports = mongoose.model('Health', healthSchema);
