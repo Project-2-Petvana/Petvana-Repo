@@ -6,8 +6,10 @@
 ![Maintainers](https://img.shields.io/badge/maintainers-collinbarlow,SallyKam,Seraphiel97-blue)
 
 ***
+
 ## Petvana Overview
-Welcome to Petvana, the pet health-tracking application designed to help your pet achieve nirvana! 
+Welcome to Petvana, the pet health-tracking application designed to help your pet achieve nirvana! Through a simple connection of your Google account, the path to better pet health begins with adding your animals to your profile, which are then conveniently displayed.
+
 ***
 
 ## Technologies Used: 
@@ -31,6 +33,18 @@ Welcome to Petvana, the pet health-tracking application designed to help your pe
 * asdf
 * asdf
 
-## Next Steps
+***
+
+## Implemented User Stories:
+* As a user, I would like to be able to sign into the application with my Google account.
+* As a user, I would like to be able add a new pet to my pet tracking application.
+* As a user, I would like to see all of my pets and a broad overview of their information.
+* As a user, I would like to be able to remove pets from my profile.
+* As a user, I would like to click a button to see a detailed view of one specific pet.
+* As a user, I would like to be able to update static information about my pet as they change or get older.
+* As a user, I would like to be able to add health data for my pet each day.
+
+***
+## Next Steps:
 * edit the health data and delete the health data
 * 
