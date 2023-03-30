@@ -45,6 +45,7 @@ Welcome to Petvana, the pet health-tracking application designed to help your pe
 * As a user, I would like to be able to add health data for my pet each day.
 
 ***
+
 ## Next Steps:
-* edit the health data and delete the health data
-* 
+* Implement edit functionality of individual pet health data. 
+* Implement delete functionality of individual pet health data.
