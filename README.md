@@ -114,4 +114,4 @@ async function createPet(req, res) {
 
 The graphic art of the pets is done by [CATALYSTUFF](https://www.freepik.com/author/catalyststuff) ON FREEPIK 
 
-The logo was designed with Kittl by Sally.
+The logo was designed with [Kittl](https://www.kittl.com/) by Sally.
