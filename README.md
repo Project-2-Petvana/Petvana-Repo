@@ -113,4 +113,5 @@ async function createPet(req, res) {
 * Technically, this was our biggest challenge for this project. It required us to integrate our learnings across different concepts into one functional piece of code. We leveraged  middleware, models, and our understanding of how data flows all into one function that is crucial to Petvana. 
 
 The graphic art of the pets is done by CATALYSTUFF ON FREEPIK 
+
 The logo was designed with Kittl by Sally.
