@@ -111,3 +111,5 @@ async function createPet(req, res) {
 ```
 * As seen above, the createPet function creates a new pet instance and saves it to the database.
 * Technically, this was our biggest challenge for this project. It required us to integrate our learnings across different concepts into one functional piece of code. We leveraged  middleware, models, and our understanding of how data flows all into one function that is crucial to Petvana. 
+
+The graphic art of the pets is done by CATALYSTUFF ON FREEPIK 
